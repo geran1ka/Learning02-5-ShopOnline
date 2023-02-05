@@ -22,30 +22,29 @@ body {
   color: #2d2d2d;
 }
 
+* {
+  margin: 0;
+}
+
 .article {
   width: 1765px;
   margin: 100px 75px 90px;
 }
+
 .header {
   margin-bottom: 50px;
 }
 
 .header__title {
-  margin-top: 0;
-  margin-bottom: 50px;
   font-size: 50px;
+  margin-bottom: 50px;
 }
 
-.header__text {
-  margin-top: 0;
-  margin-bottom: 50px;
-}
 .header__nav {
-  margin-top: 50px;
+  padding-top: 50px;
 }
 
 .header__list {
-  margin: 0;
   padding-left: 16px;
   font-size: 16px;
   color: #525252;
@@ -56,8 +55,8 @@ body {
   text-decoration: none;
 }
 
-.section {
-  margin: 50px 0;
+.section:not(:last-child)  {
+  margin-bottom: 50px;
 }
 
 .container {
@@ -66,19 +65,14 @@ body {
 
 .img {
   height: 560px;
+  padding-bottom: 50px;
 }
 
 .title {
-  margin-top: 50px;
-  margin-bottom: 0;
   font-size: 22px;
 }
 
-.text {
-  margin: 0;
-}
-
 .subtitle {
-  margin-bottom: 0;
   font-weight: 400;
 }
+
