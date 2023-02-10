@@ -1,0 +1,40 @@
+
+.article {
+  width: 1765px;
+  margin: 100px 75px 90px;
+}
+
+.container {
+  max-width: 1095px;
+}
+
+.section  {
+  padding: 25px 0;
+}
+
+.section:last-child {
+  padding-bottom: 0;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.img ~ .title {
+  padding-top: 25px;
+}
+
+.subtitle {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.text-alternative {
+  margin-bottom: 50px;
+}
+
+.img {
+  height: 560px;
+  padding-bottom: 25px;
+}
