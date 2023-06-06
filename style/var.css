@@ -2,6 +2,9 @@
 :root {
   --main-color: #2D2D2D;
   --gray-color: #8F8F8F;
+  --gray-dark: #525252;
+  --black-color: #000000;
+  --white-color: #ffffff;
 
   --main-bg-color: #E5E5E5;
 
