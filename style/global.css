@@ -1,20 +1,7 @@
-@font-face {
-  font-family: lato;
-  src: local("lato-regular"), url("fonts/lato-regular.woff2") format("woff2"),
-      url("fonts/lato-regular.woff") format("woff");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: lato;
-  src: local("lato-bold"), url("fonts/lato-bold.woff2") format("woff2"),
-      url("fonts/lato-bold.woff") format("woff");
-  font-weight: 700;
-}
-
 html {
   position: relative;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -26,13 +13,13 @@ html {
 body {
   min-width: 320px;
   min-height: 100vh;
-  width: 1920px;
   margin: 0 auto;
-  font-family: lato, Arial, sans-serif;
-  font-size: 22px;
+  font-family: 'Arial', sans-serif;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 1.5;
-  color: #2d2d2d;
+  line-height: calc(28/20);
+  color: var(--main-color, #ffffff);
+  background-color: var(--main-bg-color, #E5E5E5);
 }
 
 img, svg {
@@ -51,7 +38,7 @@ a {
   color: inherit;
 }
 
-ul {
+ul, ol {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -61,12 +48,46 @@ h1,
 h2,
 h3,
 p,
-figure,
-fieldset {
+figure {
   margin: 0;
 }
 
-iframe {
+legend {
+  display: block; 
+  padding: 0;
+  white-space: normal;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
   border: none;
 }
 
+
+/*
+Доступно скрываю элементы
+*/
+
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}
+
+.visible {
+  transition: transform .1s ease,
+    opacity .1s ease;
+}
+
+
+@media (max-width: 1240px) {
+
+}
+
+@media (max-width: 900px) {
+
+}
+
+@media (max-width: 640px) {
+
+}
