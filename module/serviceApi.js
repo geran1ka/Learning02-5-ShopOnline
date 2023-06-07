@@ -1,5 +1,5 @@
-export const getDataArticle = async (url) => {
-  const result = await fetch (`${url}`);
+export const getDataArticle = async (url, id = '') => {
+  const result = await fetch (`${url}/${id}`);
   const data = await result.json();
   return data;
 }

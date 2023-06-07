@@ -1,6 +1,16 @@
+import { API_URL_USER, API_URL_POST } from "./const.js";
 import { createElement } from "./helper.js"
+import { getData } from "./pagination/getData.js";
+import { getDataArticle } from "./serviceApi.js";
 
-export const createArticle = () => {
+export const createArticle = async () => {
+
+  const idU = window.location.search.slice(4)
+  const data = await getDataArticle(API_URL_POST, idU)
+  const userId =  data.data.user_id;
+  const authorName = await (await fetch(`https://gorest.co.in/public-api/users/${userId}`)).json();
+  console.log('author: ', authorName);
+
   const article = createElement('article', {
     className: 'article',
   });
@@ -8,10 +18,10 @@ export const createArticle = () => {
   const container = createElement('container', {
     className: 'article-container',
   });
-
+  
   const articleTitle = createElement('h2', {
     className: 'article__title',
-    textContent: 'Как ухаживать за обувью из кожи',
+    textContent: data.data.title,
   });
 
   const articleContent = createElement('div', {
@@ -20,15 +30,17 @@ export const createArticle = () => {
 
   const firstParagraf = createElement('p', {
     className: 'article__text',
-    textContent: 'Материала для обуви лучше натуральной кожи все ещё не придумали. Качественную кожу очень приятно носить, она идеально ложится по ноге, в нужных местах немного растягивается. В кожаной обуви, если она соответствует погоде, создаётся хороший микроклимат – ноги не мёрзнут, не потеют, и чувствуют себя очень комфортно. Неудивительно, что по статистике больше 60% покупателей выбирает обувь именно из гладкой натуральной кожи. Вдобавок кожа практична и не требует трудоёмкого ухода.',
+    textContent: data.data.body,
   });
-
+/*
   const secondParagraf = createElement('p', {
     className: 'article__text',
     textContent: 'Но это совсем не означает, что можно раз в полгода протереть обувь тряпочкой и на этом остановиться. Так же, как кожа лица и тела, материал обуви нуждается в заботе. Регулярный уход надолго продлит срок службы любимой пары и сделает её аккуратной и сияющей, словно только что из магазина.'
   });
 
   articleContent.append(firstParagraf, secondParagraf);
+  */
+  articleContent.append(firstParagraf)
   container.append(articleTitle, articleContent);
   article.append(container);
 
@@ -56,7 +68,7 @@ export const createArticle = () => {
 
   const author = createElement('p', {
     className: 'footer__author',
-    textContent: 'Инга Соловьева'
+    textContent: authorName.data.name,
   });
 
   const footerDate = createElement('div', {

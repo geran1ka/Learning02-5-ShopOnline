@@ -1,4 +1,3 @@
-import { API_URL } from "./const.js";
 import { createElement } from "./helper.js";
 
 export const renderBlog = (data) => {
@@ -54,7 +53,7 @@ user_id
   
     const itemTitleLink = createElement('a', {
       className: 'item__title-link',
-      href: `${API_URL}/${item.id}`,
+      href: `article.html?id=${item.id}`,
       textContent: `${item.title}`,
     })
   
@@ -112,5 +111,5 @@ user_id
 
 
 
-  return blog;
+  return {blog, container} ;
 }
