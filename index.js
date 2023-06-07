@@ -12,9 +12,12 @@ import { paginationController } from "./module/paginationControl.js";
 
 const init = async () => {
   const pag = document.querySelector('.page');
-  const data = await getDataArticle(API_URL_POST,'?page=24');
-  console.log('data: ', data);
-  const {blog, container} = renderBlog(data);
+  let url = window.location.href.slice(0, window.location.href.length - window.location.search.length)
+  let search = window.location.search;
+  const data = await getDataArticle(API_URL_POST, search);
+  
+  
+  const {blog, container, urlPageBlog} = renderBlog(data);
   const {pagination, linkBack, linkNext, paginationList, page, pages} = renderPagination(data);
   console.log(linkNext);
   container.append(pagination)
@@ -22,7 +25,7 @@ const init = async () => {
   paginationController(linkBack, linkNext, page, pages);
   console.log(paginationController(linkBack, linkNext, page));
 
-  console.log(page);
+  console.log(urlPageBlog);
 
   pag?.append(blog);
   
@@ -30,8 +33,9 @@ const init = async () => {
 
 
 const body = document.querySelector('.article-page');
-const article = await renderArticle();
+const article = await renderArticle(urlPageBlog);
 body?.append(article);
+console.log('запуск');
 
 }
 

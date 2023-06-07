@@ -16,21 +16,6 @@ export const renderBlog = (data) => {
     className: 'blog__list',
   });
 
-/*
-  body
-: 
-"Reiciendis succurro ipsum. Volutabrum sint utor. Optio bene veritas. Aveho textilis bellum. Cinis adeptio curriculum. Vesica aranea demo. Aspernatur capio uberrime. Venio deorsum stultus. Culpo vereor calcar. Subvenio aufero fugit."
-id
-: 
-41940
-title
-: 
-"Stultus quasi ambitus stella cedo derelinquo delego."
-user_id
-: 
-2574341
-*/
-
   const itemList = data.data.map(item => {
 
     const li = createElement('li', {
@@ -109,7 +94,7 @@ user_id
   container.append(blogList);
   blog.append(container)
 
+  const urlPageBlog = window.location.href
 
-
-  return {blog, container} ;
+  return {blog, container, urlPageBlog} ;
 }

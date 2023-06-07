@@ -3,7 +3,7 @@ import { createElement } from "./helper.js"
 import { getData } from "./pagination/getData.js";
 import { getDataArticle } from "./serviceApi.js";
 
-export const createArticle = async () => {
+export const createArticle = async (linkBlog) => {
 
   const idU = window.location.search.slice(4)
   const data = await getDataArticle(API_URL_POST, idU)
@@ -58,7 +58,7 @@ export const createArticle = async () => {
 
   const footerLink = createElement('a', {
     className: 'footer__link',
-    href: '#',
+    href: linkBlog,
     textContent: 'К списку статей',
   });
 
@@ -68,7 +68,7 @@ export const createArticle = async () => {
 
   const author = createElement('p', {
     className: 'footer__author',
-    textContent: authorName.data.name,
+    textContent: authorName.data.name ? authorName.data.name : 'Аноним',
   });
 
   const footerDate = createElement('div', {
@@ -105,7 +105,14 @@ export const createArticle = async () => {
       </svg>  
       <span class="footer__comment-count">0</span>
     `
+  });
+
+  footerCommentLink.addEventListener('click', e => {
+    console.log('назад');
+
+    history.back();
   })
+
 
   footerCountWrapper.append(footerViewsLink, footerCommentLink);
   footerDevelopment.append(author, footerDate, footerCountWrapper);

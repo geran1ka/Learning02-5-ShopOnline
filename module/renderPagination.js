@@ -7,7 +7,7 @@ export const renderPagination = (data) => {
   })
 
   const linkBack = createElement('a', {
-    className: 'pagination__link pagination__link_disabled',
+    className: 'pagination__link',
     href: '#',
     innerHTML: `
       <svg width="29" height="19" viewBox="0 0 29 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -33,26 +33,28 @@ export const renderPagination = (data) => {
     className: 'pagination__list',
   });
 
-  const paginationItem = createElement('li', {
-    className: 'pagination__item',
+  if (page > 1) {
+    const paginationItem = createElement('li', {
+      className: 'pagination__item',
+      textContent: page - 1,
+    });
+    paginationList.append(paginationItem)
+  }
+
+  const paginationItemT = createElement('li', {
+    className: 'pagination__item pagination__item_active',
     textContent: page,
   });
 
-  const paginationItemT = createElement('li', {
-    className: 'pagination__item',
-    textContent: page + 1,
-  });
+    paginationList.append(paginationItemT);
 
-  const paginationItemTh = createElement('li', {
-    className: 'pagination__item',
-    textContent: page + 2,
-  });
-
-
-  console.log(page);
-
-  paginationList.append(paginationItem, paginationItemT, paginationItemTh);
-
+  if (page < pages) {
+    const paginationItemTh = createElement('li', {
+      className: 'pagination__item',
+      textContent: page + 1,
+    });
+    paginationList.append(paginationItemTh)
+  }
 
   pagination.append(linkBack, paginationList, linkNext);
 

@@ -3,7 +3,7 @@ import { createAside } from "./createAside.js";
 import { createArticle } from "./createAticle.js";
 import { createElement } from "./helper.js"
 
-export const renderArticle = async () => {
+export const renderArticle = async (linkBlog) => {
  
 
   const wrapper = createElement('div', {
@@ -11,7 +11,7 @@ export const renderArticle = async () => {
   });
 
   const header = createArticleHeader();
-  const {article, footer} = await createArticle();
+  const {article, footer} = await createArticle(linkBlog);
   const aside = createAside();
 
   wrapper.append(header, article, footer, aside)
