@@ -8,6 +8,9 @@ import { createArticle } from "./module/createAticle.js";
 import { renderArticle } from "./module/renderArticle.js";
 
 
+export const router = Router();
+console.log('router: ', router);
+
 
 
 const init = async () => {
