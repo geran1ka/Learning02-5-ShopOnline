@@ -1,26 +1,28 @@
-import {API_URL_POST} from './const.js';
-import {renderBlog} from './renderBlog.js';
-import {getDataArticle} from './serviceApi.js';
-
-export const paginationController = async (pagination, linkBack, linkNext, page, pages) => {
+export const paginationController = async (pagination, linkBack, linkNext, page, pages, selectPagination) => {
   const url = window.location.href.slice(0, window.location.href.length - window.location.search.length);
-
-  linkBack.addEventListener('click', async e => {
-    e.preventDefault();
-    if (page > 1) {
-      page--;
-    }
-  });
-  linkNext.addEventListener('click', async e => {
-    e.preventDefault();
-    if (page + 1 < pages) {
-      page++;
-    }
-  });
-
+  selectPagination.selectedIndex = window.localStorage.getItem('select');
   pagination.addEventListener('click', async ({target}) => {
     if (target.closest('.pagination__link')) {
-      renderBlog(await getDataArticle(API_URL_POST, `?page=${page}`));
+      if (target.closest('.pagination__link-back')) {
+        if (page > 1) {
+          if (+selectPagination.value !== 0) {
+            page = page - +selectPagination.value < 1 ? 1 : page - +selectPagination.value;
+          } else {
+            page -= 1;
+          }
+        }
+      }
+      if (target.closest('.pagination__link-next')) {
+        if (page + 1 < pages) {
+          if (+selectPagination.value !== 0) {
+            page = page + +selectPagination.value > pages ? pages : page + +selectPagination.value;
+          } else {
+            page += 1;
+          }
+        }
+      }
+      let index = selectPagination.selectedIndex;
+      window.localStorage.setItem('select', index);
       window.location.assign(`${url}?page=${page}`);
     }
   });

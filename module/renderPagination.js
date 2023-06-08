@@ -6,7 +6,7 @@ export const renderPagination = (data) => {
   });
 
   const linkBack = createElement('a', {
-    className: 'pagination__link',
+    className: 'pagination__link pagination__link-back',
     href: '#',
     innerHTML: `
       <svg width="29" height="19" viewBox="0 0 29 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -16,7 +16,7 @@ export const renderPagination = (data) => {
   });
 
   const linkNext = createElement('a', {
-    className: 'pagination__link',
+    className: 'pagination__link pagination__link-next',
     href: '#',
     innerHTML: `
       <svg width="29" height="19" viewBox="0 0 29 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -27,6 +27,7 @@ export const renderPagination = (data) => {
 
   const page = data.meta.pagination.page;
   const pages = data.meta.pagination.pages;
+
 
   const paginationList = createElement('ul', {
     className: 'pagination__list',
@@ -81,7 +82,22 @@ export const renderPagination = (data) => {
     paginationList.append(paginationItemFiveHidden);
   }
 
-  pagination.append(linkBack, paginationList, linkNext);
+  const selectPagination = createElement('select', {
+    className: 'pagination__select',
+    id: 'select',
+    innerHTML: `
+      <option value="0">---</option>
+      <option value="10">10</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+    `,
+  });
 
-  return {pagination, linkBack, linkNext, page, pages};
+  const indexOption = window.localStorage.getItem('select');
+  selectPagination.selectedIndex = indexOption;
+
+
+  pagination.append(linkBack, paginationList, linkNext, selectPagination);
+
+  return {pagination, linkBack, linkNext, page, pages, selectPagination};
 };

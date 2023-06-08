@@ -10,11 +10,12 @@ const init = async () => {
   const pageBlog = document.querySelector('.page-blog');
   const search = window.location.search;
   const data = await getDataArticle(API_URL_POST, search);
+  console.log('data: ', data);
 
   const {blog, container} = renderBlog(data);
-  const {pagination, linkBack, linkNext, page, pages} = renderPagination(data);
+  const {pagination, linkBack, linkNext, page, pages, selectPagination} = renderPagination(data);
   container.append(pagination);
-  paginationController(pagination, linkBack, linkNext, page, pages);
+  paginationController(pagination, linkBack, linkNext, page, pages, selectPagination);
   pageBlog?.append(blog);
 
   const pageArticle = document.querySelector('.page-article');
