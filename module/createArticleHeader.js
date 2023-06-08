@@ -1,6 +1,6 @@
 import {createElement} from './helper.js';
 
-export const createArticleHeader = () => {
+export const createArticleHeader = (data) => {
   const header = createElement('header', {
     className: 'header',
   });
@@ -50,9 +50,9 @@ export const createArticleHeader = () => {
   });
 
   const thirdItemLink = createElement('a', {
-    className: 'header__link',
+    className: 'header__link header__link_active',
     href: '#',
-    textContent: 'Как ухаживать за обувью из кожи',
+    textContent: data.data.title,
   });
 
   thirdItem.append(thirdItemLink);

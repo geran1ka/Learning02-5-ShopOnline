@@ -93,10 +93,6 @@ export const renderPagination = (data) => {
     `,
   });
 
-  const indexOption = window.localStorage.getItem('select');
-  selectPagination.selectedIndex = indexOption;
-
-
   pagination.append(linkBack, paginationList, linkNext, selectPagination);
 
   return {pagination, linkBack, linkNext, page, pages, selectPagination};

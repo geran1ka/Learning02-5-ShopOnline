@@ -1,6 +1,8 @@
 export const paginationController = async (pagination, linkBack, linkNext, page, pages, selectPagination) => {
   const url = window.location.href.slice(0, window.location.href.length - window.location.search.length);
+
   selectPagination.selectedIndex = window.localStorage.getItem('select');
+
   pagination.addEventListener('click', async ({target}) => {
     if (target.closest('.pagination__link')) {
       if (target.closest('.pagination__link-back')) {
@@ -21,8 +23,7 @@ export const paginationController = async (pagination, linkBack, linkNext, page,
           }
         }
       }
-      let index = selectPagination.selectedIndex;
-      window.localStorage.setItem('select', index);
+      window.localStorage.setItem('select', selectPagination.selectedIndex);
       window.location.assign(`${url}?page=${page}`);
     }
   });

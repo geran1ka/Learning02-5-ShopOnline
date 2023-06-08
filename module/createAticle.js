@@ -1,10 +1,6 @@
-import {API_URL_POST} from './const.js';
 import {createElement} from './helper.js';
-import {getDataArticle} from './serviceApi.js';
 
-export const createArticle = async () => {
-  const idU = window.location.search.slice(4);
-  const data = await getDataArticle(API_URL_POST, idU);
+export const createArticle = async (data) => {
   const userId = data.data.user_id;
 
   const authorName = await (await fetch(`https://gorest.co.in/public-api/users/${userId}`)).json();
