@@ -32,7 +32,7 @@
   width: 18px;
   height: 18px;
   background-size: 18px 18px;
-  background: url('../image/aside/arrowRight.svg') center no-repeat;
+  background: url('../image/arrowRight.svg') center no-repeat;
 } 
 
 .header__link {
@@ -131,12 +131,16 @@
   width: 24px;
   height: 24px;
   background-size: 24px 24px;
-  background: url('../image/aside/backspace.svg') center no-repeat;
-
+  background: url('../image/backspace.svg') center no-repeat;
+  transition: background-image .3s ease-in-out;
 }
 
 .footer__link:hover {
-  color: var(--blue-color)
+  color: var(--blue-color);
+}
+
+.footer__link:hover::before {
+  background-image: url('../image/backspaceblue.svg');
 }
 
 .footer__link:focus {

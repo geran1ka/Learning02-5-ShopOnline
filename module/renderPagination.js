@@ -1,10 +1,9 @@
-import { createElement } from "./helper.js"
+import {createElement} from './helper.js';
 
 export const renderPagination = (data) => {
-
   const pagination = createElement('div', {
     className: 'pagination',
-  })
+  });
 
   const linkBack = createElement('a', {
     className: 'pagination__link',
@@ -26,8 +25,8 @@ export const renderPagination = (data) => {
     `,
   });
 
-  let page = data.meta.pagination.page;
-  let pages = data.meta.pagination.pages;
+  const page = data.meta.pagination.page;
+  const pages = data.meta.pagination.pages;
 
   const paginationList = createElement('ul', {
     className: 'pagination__list',
@@ -38,7 +37,7 @@ export const renderPagination = (data) => {
       className: 'pagination__item',
       textContent: page - 1,
     });
-    paginationList.append(paginationItem)
+    paginationList.append(paginationItem);
   }
 
   const paginationItemT = createElement('li', {
@@ -46,17 +45,17 @@ export const renderPagination = (data) => {
     textContent: page,
   });
 
-    paginationList.append(paginationItemT);
+  paginationList.append(paginationItemT);
 
   if (page < pages) {
     const paginationItemTh = createElement('li', {
       className: 'pagination__item',
       textContent: page + 1,
     });
-    paginationList.append(paginationItemTh)
+    paginationList.append(paginationItemTh);
   }
 
   pagination.append(linkBack, paginationList, linkNext);
 
-  return {pagination, linkBack, linkNext, paginationList, page, pages}
-}
+  return {pagination, linkBack, linkNext, page, pages};
+};

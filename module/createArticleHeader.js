@@ -18,19 +18,19 @@ export const createArticleHeader = () => {
   });
 
   const firstItem = createElement('li', {
-    className: 'header__item'
+    className: 'header__item',
   });
 
   const firstItemLink = createElement('a', {
     className: 'header__link',
-    href: '#',
+    href: '/blog.html',
     textContent: 'Главная',
   });
 
   firstItem.append(firstItemLink);
 
   const secondItem = createElement('li', {
-    className: 'header__item'
+    className: 'header__item',
   });
 
   const secondItemLink = createElement('a', {
@@ -39,10 +39,14 @@ export const createArticleHeader = () => {
     textContent: 'Блог',
   });
 
+  secondItemLink.addEventListener('click', e => {
+    window.history.back();
+  });
+
   secondItem.append(secondItemLink);
 
   const thirdItem = createElement('li', {
-    className: 'header__item'
+    className: 'header__item',
   });
 
   const thirdItemLink = createElement('a', {
@@ -59,5 +63,5 @@ export const createArticleHeader = () => {
   header.append(container);
 
   return header;
-}
+};
 

@@ -6,4 +6,4 @@ export const createElement = (tag, attr) => {
   }
 
   return elem;
-}
+};

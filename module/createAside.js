@@ -1,4 +1,4 @@
-import { createElement } from "./helper.js"
+import {createElement} from './helper.js';
 
 export const createAside = () => {
   const aside = createElement('aside', {
@@ -27,5 +27,6 @@ export const createAside = () => {
 
   container.append(asideBlockOne, asideBlockTwo);
   aside.append(container);
+
   return aside;
-}
+};

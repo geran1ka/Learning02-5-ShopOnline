@@ -1,15 +1,14 @@
-import { API_URL_USER, API_URL_POST } from "./const.js";
-import { createElement } from "./helper.js"
-import { getData } from "./pagination/getData.js";
-import { getDataArticle } from "./serviceApi.js";
+import {API_URL_POST} from './const.js';
+import {createElement} from './helper.js';
+import {getDataArticle} from './serviceApi.js';
 
-export const createArticle = async (linkBlog) => {
+export const createArticle = async () => {
+  const idU = window.location.search.slice(4);
+  const data = await getDataArticle(API_URL_POST, idU);
+  const userId = data.data.user_id;
+  console.log('userId: ', userId);
 
-  const idU = window.location.search.slice(4)
-  const data = await getDataArticle(API_URL_POST, idU)
-  const userId =  data.data.user_id;
   const authorName = await (await fetch(`https://gorest.co.in/public-api/users/${userId}`)).json();
-  console.log('author: ', authorName);
 
   const article = createElement('article', {
     className: 'article',
@@ -18,7 +17,7 @@ export const createArticle = async (linkBlog) => {
   const container = createElement('container', {
     className: 'article-container',
   });
-  
+
   const articleTitle = createElement('h2', {
     className: 'article__title',
     textContent: data.data.title,
@@ -32,15 +31,8 @@ export const createArticle = async (linkBlog) => {
     className: 'article__text',
     textContent: data.data.body,
   });
-/*
-  const secondParagraf = createElement('p', {
-    className: 'article__text',
-    textContent: 'Но это совсем не означает, что можно раз в полгода протереть обувь тряпочкой и на этом остановиться. Так же, как кожа лица и тела, материал обуви нуждается в заботе. Регулярный уход надолго продлит срок службы любимой пары и сделает её аккуратной и сияющей, словно только что из магазина.'
-  });
 
-  articleContent.append(firstParagraf, secondParagraf);
-  */
-  articleContent.append(firstParagraf)
+  articleContent.append(firstParagraf);
   container.append(articleTitle, articleContent);
   article.append(container);
 
@@ -58,12 +50,16 @@ export const createArticle = async (linkBlog) => {
 
   const footerLink = createElement('a', {
     className: 'footer__link',
-    href: linkBlog,
+    href: '#',
     textContent: 'К списку статей',
   });
 
+  footerLink.addEventListener('click', e => {
+    window.history.back();
+  });
+
   const footerDevelopment = createElement('div', {
-    className: 'footer__development'
+    className: 'footer__development',
   });
 
   const author = createElement('p', {
@@ -75,12 +71,12 @@ export const createArticle = async (linkBlog) => {
     className: 'footer__date',
     innerHTML: `
       <p>22 октября 2021, 12:45</p>
-    `
+    `,
   });
 
   const footerCountWrapper = createElement('div', {
     className: 'footer__count-wrapper',
-  })
+  });
 
   const footerViewsLink = createElement('a', {
     className: 'footer__views-link',
@@ -91,8 +87,8 @@ export const createArticle = async (linkBlog) => {
         <path d="M12 15.5C13.6569 15.5 15 14.1569 15 12.5C15 10.8431 13.6569 9.5 12 9.5C10.3431 9.5 9 10.8431 9 12.5C9 14.1569 10.3431 15.5 12 15.5Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>                    
       <span class="footer__views-count">1.2K</span>
-    `
-  })
+    `,
+  });
 
   const footerCommentLink = createElement('a', {
     className: 'footer__views-link',
@@ -104,14 +100,14 @@ export const createArticle = async (linkBlog) => {
         </g>
       </svg>  
       <span class="footer__comment-count">0</span>
-    `
+    `,
   });
 
   footerCommentLink.addEventListener('click', e => {
     console.log('назад');
 
     history.back();
-  })
+  });
 
 
   footerCountWrapper.append(footerViewsLink, footerCommentLink);
@@ -121,6 +117,5 @@ export const createArticle = async (linkBlog) => {
   footer.append(footerContainer);
 
 
-
   return {article, footer};
-}
+};

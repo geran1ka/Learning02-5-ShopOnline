@@ -1,42 +1,26 @@
-import { renderBlog } from "./module/renderBlog.js";
-import { getDataArticle } from "./module/serviceApi.js";
-import {API_URL_POST} from './module/const.js'
-import { createArticleHeader} from "./module/createArticleHeader.js";
-import { createArticle } from "./module/createAticle.js";
-import { renderArticle } from "./module/renderArticle.js";
-import { renderPagination } from "./module/renderPagination.js";
-import { paginationController } from "./module/paginationControl.js";
-
-
+import {renderBlog} from './module/renderBlog.js';
+import {getDataArticle} from './module/serviceApi.js';
+import {API_URL_POST} from './module/const.js';
+import {renderArticle} from './module/renderArticle.js';
+import {renderPagination} from './module/renderPagination.js';
+import {paginationController} from './module/paginationControl.js';
 
 
 const init = async () => {
-  const pag = document.querySelector('.page');
-  let url = window.location.href.slice(0, window.location.href.length - window.location.search.length)
-  let search = window.location.search;
+  const pageBlog = document.querySelector('.page-blog');
+  const search = window.location.search;
   const data = await getDataArticle(API_URL_POST, search);
-  
-  
-  const {blog, container, urlPageBlog} = renderBlog(data);
-  const {pagination, linkBack, linkNext, paginationList, page, pages} = renderPagination(data);
-  console.log(linkNext);
-  container.append(pagination)
 
-  paginationController(linkBack, linkNext, page, pages);
-  console.log(paginationController(linkBack, linkNext, page));
+  const {blog, container} = renderBlog(data);
+  const {pagination, linkBack, linkNext, page, pages} = renderPagination(data);
+  container.append(pagination);
+  paginationController(pagination, linkBack, linkNext, page, pages);
+  pageBlog?.append(blog);
 
-  console.log(urlPageBlog);
+  const pageArticle = document.querySelector('.page-article');
 
-  pag?.append(blog);
-  
-
-
-
-const body = document.querySelector('.article-page');
-const article = await renderArticle(urlPageBlog);
-body?.append(article);
-console.log('запуск');
-
-}
+  const article = await renderArticle();
+  pageArticle?.append(article);
+};
 
 init();

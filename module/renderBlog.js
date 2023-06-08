@@ -1,10 +1,9 @@
-import { createElement } from "./helper.js";
+import {createElement} from './helper.js';
 
 export const renderBlog = (data) => {
-
   const blog = createElement('section', {
     className: 'blog',
-  })
+  });
 
   const container = createElement('div', {
     className: 'blog__container',
@@ -17,48 +16,47 @@ export const renderBlog = (data) => {
   });
 
   const itemList = data.data.map(item => {
-
     const li = createElement('li', {
       className: 'blog__item item',
     });
-  
+
     const itemImg = createElement('img', {
       className: 'item__img',
-      src: './image/shoes.jpg',
+      src: item.image ? item.image : './image/no-photo.jpg',
       alt: '#',
     });
-  
+
     const itemContent = createElement('div', {
       className: 'item__content-wrapper',
     });
-  
+
     const itemTitle = createElement('h2', {
       className: 'item__title',
-    })
-  
+    });
+
     const itemTitleLink = createElement('a', {
       className: 'item__title-link',
       href: `article.html?id=${item.id}`,
       textContent: `${item.title}`,
-    })
-  
+    });
+
     itemTitle.append(itemTitleLink);
-    
-  
+
+
     const itemData = createElement('div', {
       className: 'item__date date',
     });
-  
+
     const time = createElement('p', {
       textContent: '22 октября 2021, 12:45',
     });
-  
+
     itemData.append(time);
-  
+
     const itemCountWrapper = createElement('div', {
       className: 'item__count-wrapper',
     });
-  
+
     const linkViewsCounter = createElement('a', {
       className: 'item__views-link',
       href: '#',
@@ -70,7 +68,7 @@ export const renderBlog = (data) => {
         <span class="item__views-count">1.2K</span>
       `,
     });
-  
+
     const linkViewsComent = createElement('a', {
       className: 'item__views-link',
       href: '#',
@@ -82,19 +80,19 @@ export const renderBlog = (data) => {
         </svg>  
         <span class="item__comment-count">0</span>
       `,
-    })
-  
+    });
+
     itemCountWrapper.append(linkViewsCounter, linkViewsComent);
     itemContent.append(itemTitle, itemData, itemCountWrapper);
     li.append(itemImg, itemContent);
 
     return li;
-  })
-  blogList.append(...itemList)
+  });
+  blogList.append(...itemList);
   container.append(blogList);
-  blog.append(container)
+  blog.append(container);
 
-  const urlPageBlog = window.location.href
+  const urlPageBlog = window.location.href;
 
-  return {blog, container, urlPageBlog} ;
-}
+  return {blog, container, urlPageBlog};
+};
