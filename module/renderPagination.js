@@ -32,6 +32,16 @@ export const renderPagination = (data) => {
     className: 'pagination__list',
   });
 
+  if (page === pages) {
+    const paginationItemOneHidden = createElement('li', {
+      className: 'pagination__item',
+      innerHTML: `
+      <a class="pagination__item-link" href="blog.html?page=${page - 2}">${page - 2}</a>
+      `,
+    });
+    paginationList.append(paginationItemOneHidden);
+  }
+
   if (page > 1) {
     const paginationItemOne = createElement('li', {
       className: 'pagination__item',
@@ -52,13 +62,23 @@ export const renderPagination = (data) => {
   paginationList.append(paginationItemTwo);
 
   if (page < pages) {
-    const paginationItemTh = createElement('li', {
+    const paginationItemThree = createElement('li', {
       className: 'pagination__item',
       innerHTML: `
       <a class="pagination__item-link" href="blog.html?page=${page + 1}">${page + 1}</a>
       `,
     });
-    paginationList.append(paginationItemTh);
+    paginationList.append(paginationItemThree);
+  }
+
+  if (page === 1) {
+    const paginationItemFiveHidden = createElement('li', {
+      className: 'pagination__item',
+      innerHTML: `
+      <a class="pagination__item-link" href="blog.html?page=${page + 2}">${page + 2}</a>
+      `,
+    });
+    paginationList.append(paginationItemFiveHidden);
   }
 
   pagination.append(linkBack, paginationList, linkNext);
