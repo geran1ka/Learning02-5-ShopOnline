@@ -20,11 +20,9 @@ export const paginationController = async (pagination, linkBack, linkNext, page,
 
   pagination.addEventListener('click', async ({target}) => {
     if (target.closest('.pagination__link')) {
-      console.log('клик стрелка');
       renderBlog(await getDataArticle(API_URL_POST, `?page=${page}`));
       window.location.assign(`${url}?page=${page}`);
     }
-
   });
 
   if (page >= pages) {

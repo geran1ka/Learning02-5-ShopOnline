@@ -33,24 +33,30 @@ export const renderPagination = (data) => {
   });
 
   if (page > 1) {
-    const paginationItem = createElement('li', {
+    const paginationItemOne = createElement('li', {
       className: 'pagination__item',
-      textContent: page - 1,
+      innerHTML: `
+      <a class="pagination__item-link" href="blog.html?page=${page - 1}">${page - 1}</a>
+      `,
     });
-    paginationList.append(paginationItem);
+    paginationList.append(paginationItemOne);
   }
 
-  const paginationItemT = createElement('li', {
+  const paginationItemTwo = createElement('li', {
     className: 'pagination__item pagination__item_active',
-    textContent: page,
+    innerHTML: `
+      <a class="pagination__item-link" href="blog.html?page=${page}">${page}</a>
+    `,
   });
 
-  paginationList.append(paginationItemT);
+  paginationList.append(paginationItemTwo);
 
   if (page < pages) {
     const paginationItemTh = createElement('li', {
       className: 'pagination__item',
-      textContent: page + 1,
+      innerHTML: `
+      <a class="pagination__item-link" href="blog.html?page=${page + 1}">${page + 1}</a>
+      `,
     });
     paginationList.append(paginationItemTh);
   }

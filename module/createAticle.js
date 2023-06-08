@@ -6,7 +6,6 @@ export const createArticle = async () => {
   const idU = window.location.search.slice(4);
   const data = await getDataArticle(API_URL_POST, idU);
   const userId = data.data.user_id;
-  console.log('userId: ', userId);
 
   const authorName = await (await fetch(`https://gorest.co.in/public-api/users/${userId}`)).json();
 

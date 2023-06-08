@@ -19,8 +19,10 @@ const init = async () => {
 
   const pageArticle = document.querySelector('.page-article');
 
-  const article = await renderArticle();
-  pageArticle?.append(article);
+  if (pageArticle) {
+    const article = await renderArticle();
+    pageArticle?.append(article);
+  }
 };
 
 init();
