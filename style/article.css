@@ -62,6 +62,7 @@
 
 .header__link_active {
   border-bottom-color: var(--gray-dark, #525252);
+  pointer-events: none;
 }
 
 
