@@ -1,0 +1,17 @@
+@import url('var.css');
+@import url('normalize.css');
+@import url('fonts.css');
+@import url('global.css');
+@import url('header.css');
+@import url('hero.css');
+@import url('timer.css');
+@import url('promo.css');
+@import url('goods.css');
+@import url('footer.css');
+
+/* blog&artice */
+/*@import url("style.css");*/
+@import url("blog.css");
+@import url("item.css");
+@import url("pagination.css");
+@import url("article.css");
