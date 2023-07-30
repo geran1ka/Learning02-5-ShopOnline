@@ -1,4 +1,6 @@
-.pagination {
+.blog-pagination {
+  padding-top: 50px;
+
   display: flex; 
   gap: 30px;
   align-items: center;
@@ -7,21 +9,21 @@
   margin: 0 auto;
 }
 
-.pagination__link {
+.blog-pagination__link {
   line-height: 0;
   color: var(--blue-color, #3670C7);
 }
 
-.pagination__link_disabled {
+.blog-pagination__link_disabled {
   color: var(--gray-color, #8F8F8F);
 }
 
-.pagination__list {
+.blog-pagination__list {
   display: flex;
   gap: 6px;
 }
 
-.pagination__item {
+.blog-pagination__item {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,16 +38,16 @@
 
 }
 
-.pagination__item_active {
+.blog-pagination__item_active {
   border-color: var(--blue-color, #3670C7);
 }
 
 @media (max-width: 780px) {
-  .pagination {
+  .blog-pagination {
     gap: 20px;
   }
   
-  .pagination__item {
+  .blog-pagination__item {
     min-width: 24px;
     min-height: 24px;
     font-size: 14px;

@@ -1,6 +1,6 @@
 import {createElem} from '../createElem.js';
 
-export const createArticleHeader = () => {
+export const createBlogHeader = () => {
   const header = createElem('header', {
     className: 'article-header',
   });
@@ -45,19 +45,8 @@ export const createArticleHeader = () => {
 
   secondItem.append(secondItemLink);
 
-  const thirdItem = createElem('li', {
-    className: 'article-header__item',
-  });
 
-  const thirdItemLink = createElem('a', {
-    className: 'article-header__link',
-    href: '#',
-    textContent: 'Как ухаживать за обувью из кожи',
-  });
-
-  thirdItem.append(thirdItemLink);
-
-  headerList.append(firstItem, secondItem, thirdItem);
+  headerList.append(firstItem, secondItem);
   headerNav.append(headerList);
   container.append(headerNav);
   header.append(container);

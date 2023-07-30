@@ -54,7 +54,6 @@
 }
 
 @media (max-width: 1200px) {
-
   .blog-item__content-wrapper {
     align-self: center;
   }
@@ -62,8 +61,8 @@
   .blog-item__title {
     font-size: 27px;
   }
-
 }
+
 
 @media (max-width: 780px) {
   .blog-item {
@@ -105,3 +104,6 @@
     height: 16px;
   }
 }
+
+
+

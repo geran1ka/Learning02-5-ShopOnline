@@ -1,12 +1,12 @@
 import {createElem} from '../createElem.js';
 
 export const renderPagination = (data) => {
-  const pagination = createElem('div', {
-    className: 'pagination',
+  const pagination = createElem('footer', {
+    className: 'blog-pagination',
   });
 
   const linkBack = createElem('a', {
-    className: 'pagination__link',
+    className: 'blog-pagination__link',
     href: '#',
     innerHTML: `
       <svg width="29" height="19" viewBox="0 0 29 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -16,7 +16,7 @@ export const renderPagination = (data) => {
   });
 
   const linkNext = createElem('a', {
-    className: 'pagination__link',
+    className: 'blog-pagination__link',
     href: '#',
     innerHTML: `
       <svg width="29" height="19" viewBox="0 0 29 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -29,19 +29,19 @@ export const renderPagination = (data) => {
   const pages = data.meta.pagination.pages;
 
   const paginationList = createElem('ul', {
-    className: 'pagination__list',
+    className: 'blog-pagination__list',
   });
 
   if (page > 1) {
     const paginationItem = createElem('li', {
-      className: 'pagination__item',
+      className: 'blog-pagination__item',
       textContent: page - 1,
     });
     paginationList.append(paginationItem);
   }
 
   const paginationItemT = createElem('li', {
-    className: 'pagination__item pagination__item_active',
+    className: 'blog-pagination__item blog-pagination__item_active',
     textContent: page,
   });
 
@@ -49,7 +49,7 @@ export const renderPagination = (data) => {
 
   if (page < pages) {
     const paginationItemTh = createElem('li', {
-      className: 'pagination__item',
+      className: 'blog-pagination__item',
       textContent: page + 1,
     });
     paginationList.append(paginationItemTh);

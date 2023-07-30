@@ -12,6 +12,10 @@
 /* blog&artice */
 /*@import url("style.css");*/
 @import url("blog.css");
-@import url("item.css");
-@import url("pagination.css");
+@import url("blog-item.css");
+@import url("blog-pagination.css");
 @import url("article.css");
+@import url("article-header.css");
+@import url("article-footer.css");
+@import url("aside.css");
+

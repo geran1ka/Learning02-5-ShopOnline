@@ -1,17 +1,28 @@
 import {createElem} from '../createElem.js';
+import { createBreadCrumbs } from './createBreadCrumbs.js';
+import {paginationController} from './paginationControl.js';
+import {renderPagination} from './renderPagination.js';
 
 export const renderBlog = (data) => {
-  console.log('data: ', data);
-
-  const blog = createElem('section', {
+  const section = createElem('section', {
     className: 'blog',
   });
 
   const container = createElem('div', {
-    className: 'blog__container',
+    className: 'container blog-container',
   });
 
-  blog.append(container);
+  const {pagination, linkBack, linkNext, page, pages} = renderPagination(data);
+  paginationController(pagination, linkBack, linkNext, page, pages);
+
+
+  section.append(container);
+
+  const header = createBreadCrumbs(data);
+
+  const blogContentWrapper = createElem('div', {
+    className: 'blog__container',
+  });
 
   const blogList = createElem('ul', {
     className: 'blog__list',
@@ -90,10 +101,9 @@ export const renderBlog = (data) => {
     return li;
   });
   blogList.append(...itemList);
-  container.append(blogList);
-  blog.append(container);
+  blogContentWrapper.append(blogList);
+  container.append(header, blogContentWrapper, pagination);
+  // const urlPageBlog = window.location.href;
 
-  const urlPageBlog = window.location.href;
-
-  return {blog, container, urlPageBlog};
+  return section;
 };

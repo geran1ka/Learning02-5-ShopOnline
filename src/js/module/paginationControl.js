@@ -24,15 +24,15 @@ export const paginationController = async (pagination, linkBack, linkNext, page,
   });
 
   if (page >= pages) {
-    linkNext.classList.add('pagination__link_disabled');
+    linkNext.classList.add('blog-pagination__link_disabled');
   } else if (page <= 1) {
-    linkBack.classList.add('pagination__link_disabled');
+    linkBack.classList.add('blog-pagination__link_disabled');
   } else {
-    if (linkBack.classList.contains('.pagination__link_disabled')) {
-      linkBack.classList.remove('pagination__link_disabled');
+    if (linkBack.classList.contains('.blog-pagination__link_disabled')) {
+      linkBack.classList.remove('blog-pagination__link_disabled');
     }
-    if (linkNext.classList.contains('.pagination__link_disabled')) {
-      linkNext.classList.remove('pagination__link_disabled');
+    if (linkNext.classList.contains('.blog-pagination__link_disabled')) {
+      linkNext.classList.remove('blog-pagination__link_disabled');
     }
   }
   return page;

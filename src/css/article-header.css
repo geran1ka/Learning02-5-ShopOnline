@@ -1,0 +1,69 @@
+.article-header {
+  grid-area: header;
+}
+
+.article-header__list {
+  display: flex;
+  gap: 10px
+}
+
+.article-header__item {
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+.article-header__item:not(:last-child)::after {
+  content: '';
+  display: block;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  background-size: 18px 18px;
+  background: url('../img/blog/arrowRight.svg') center no-repeat;
+} 
+
+.article-header__link {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+  color: var(--gray-dark, #525252);
+  transition: 
+    color .3s ease-in-out,
+    border-bottom-color .3s ease-in-out,
+    transform .6s ease-in-out;
+  outline: none;
+  border-bottom: 2px solid transparent;
+}
+
+.article-header__link:hover {
+  color: var(--blue-color, #3670c7);
+}
+
+.article-header__link:focus {
+  border-bottom-color: var(--gray-dark, #525252);
+}
+
+.article-header__link:active {
+  transform: rotateY(360deg);
+}
+
+@media (max-width: 640px) {
+  .article-header__list {
+    gap: 5px;
+  }
+  
+  .article-header__item {
+    gap: 5px;
+  }
+  
+  .article-header__item:not(:last-child)::after {
+    width: 15px;
+    height: 15px;
+    background-size: 15px 15px;
+  } 
+  
+  .article-header__link {
+    font-size: 12px;
+  }
+}

@@ -2,46 +2,46 @@ import {createElem} from '../createElem.js';
 import {API_URL_POST} from './const.js';
 import {getDataArticle} from './serviceApi.js';
 
-export const createArticle = async () => {
-  const idU = window.location.search.slice(4);
-  const data = await getDataArticle(API_URL_POST, idU);
+export const createArticle = async (data) => {
+
+
   const userId = data.data.user_id;
   console.log('userId: ', userId);
 
   const authorName = await (await fetch(`https://gorest.co.in/public-api/users/${userId}`)).json();
 
-  const article = createElem('article', {
-    className: 'article',
+  const articleMain = createElem('div', {
+    className: 'article-main',
   });
 
   const container = createElem('container', {
-    className: 'article__container',
+    className: 'article-main__container',
   });
 
   const articleTitle = createElem('h2', {
-    className: 'article__title',
+    className: 'article-main__title',
     textContent: data.data.title,
   });
 
   const articleContent = createElem('div', {
-    className: 'article__content',
+    className: 'article-main__content',
   });
 
   const firstParagraf = createElem('p', {
-    className: 'article__text',
+    className: 'article-main__text',
     textContent: data.data.body,
   });
 
   articleContent.append(firstParagraf);
   container.append(articleTitle, articleContent);
-  article.append(container);
+  articleMain.append(container);
 
   const footer = createElem('footer', {
     className: 'article-footer',
   });
 
   const footerContainer = createElem('div', {
-    className: 'article__container article-footer__container',
+    className: 'article-main__container article-footer__container',
   });
 
   const footerNavigation = createElem('div', {
@@ -117,5 +117,5 @@ export const createArticle = async () => {
   footer.append(footerContainer);
 
 
-  return {article, footer};
+  return {articleMain, footer};
 };
