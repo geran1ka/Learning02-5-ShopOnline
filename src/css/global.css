@@ -2,6 +2,7 @@ html {
   position: relative;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 *,
@@ -11,7 +12,7 @@ html {
 }
 
 body {
-
+  height: 100%;
   margin: 0 auto;
   min-width: 320px;
   min-height: 100vh;
@@ -115,6 +116,11 @@ fieldset {
   max-width: calc(var(--max-width) + var(--padding) * 2 );
   padding: 0 var(--padding);
   margin: 0 auto;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 1440px) {

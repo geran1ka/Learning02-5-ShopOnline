@@ -9,14 +9,14 @@ import {timerInit} from './timer/timerInit.js';
 
 const init = async () => {
   timerInit();
-  const pageBlog = document.querySelector('.page-blog');
+  const pageBlog = document.querySelector('.blog-page');
   const search = window.location.search;
   const data = await getDataArticle(API_URL_POST, search);
 
   const blog = renderBlog(data);
   pageBlog?.append(blog);
 
-  const pageArticle = document.querySelector('.page-article');
+  const pageArticle = document.querySelector('.article-page');
 
   const article = await renderArticle();
   pageArticle?.append(article);

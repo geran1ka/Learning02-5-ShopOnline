@@ -1,3 +1,7 @@
+.blog-page {
+  flex: 1 1 auto;
+}
+
 .blog {
   padding-top: 40px;
   padding-bottom: 150px;

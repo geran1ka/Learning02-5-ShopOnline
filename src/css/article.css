@@ -1,6 +1,7 @@
-.page-article {
+.article-page {
   padding-top: 30px;
   padding-bottom: 150px;
+  flex: 1 1 auto;
 }
 .article-container {
   display: grid;
