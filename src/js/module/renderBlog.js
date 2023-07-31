@@ -34,7 +34,7 @@ export const renderBlog = (data) => {
     });
     const itemImg = createElem('img', {
       className: 'blog-item__img',
-      src: item.image ? item.image : '../../img/blog/no-photo.jpg',
+      src: item.image ? item.image : './img/blog/no-photo.jpg',
       alt: '#',
     });
 

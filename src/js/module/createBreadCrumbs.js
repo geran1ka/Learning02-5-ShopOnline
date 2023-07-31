@@ -23,7 +23,7 @@ export const createBreadCrumbs = ({data} = {}) => {
 
   const firstItemLink = createElem('a', {
     className: 'article-header__link',
-    href: '../../index.html',
+    href: './index.html',
     textContent: 'Главная',
   });
 
@@ -35,7 +35,7 @@ export const createBreadCrumbs = ({data} = {}) => {
 
   const secondItemLink = createElem('a', {
     className: 'article-header__link',
-    href: '../../blog.html',
+    href: './blog.html',
     textContent: 'Блог',
   });
 
