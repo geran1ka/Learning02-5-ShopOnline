@@ -44,20 +44,26 @@ export const createBreadCrumbs = ({data} = {}) => {
   });
 
   secondItem.append(secondItemLink);
+  headerList.append(firstItem, secondItem);
+  if (data.title) {
+    const thirdItem = createElem('li', {
+      className: 'article-header__item',
+    });
 
-  const thirdItem = createElem('li', {
-    className: 'article-header__item',
-  });
+    const thirdItemLink = createElem('a', {
+      className: 'article-header__link',
+      href: '#',
+      textContent: data.title,
+    });
 
-  const thirdItemLink = createElem('a', {
-    className: 'article-header__link',
-    href: '#',
-    textContent: data.title,
-  });
+    thirdItem.append(thirdItemLink);
+    headerList.append(thirdItem);
+  }
 
-  thirdItem.append(thirdItemLink);
-
-  headerList.append(firstItem, secondItem, thirdItem);
+  const linkAll = headerList.querySelectorAll('.article-header__link');
+  const linkLast = linkAll[linkAll.length - 1];
+  linkLast.classList.add('article-header__link_active')
+  
   headerNav.append(headerList);
   container.append(headerNav);
   header.append(container);

@@ -36,6 +36,13 @@
   border-bottom: 2px solid transparent;
 }
 
+.article-header__link_active {
+  text-decoration: underline;
+  color: gray;
+  pointer-events: none;
+  cursor: pointer;
+}
+
 .article-header__link:hover {
   color: var(--blue-color, #3670c7);
 }
