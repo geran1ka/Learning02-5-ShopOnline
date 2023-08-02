@@ -1,4 +1,8 @@
-body {
-  background-color: black;
-  color: red;
-}
+@import 'normalize';
+@import 'var';
+@import 'style';
+@import 'header';
+@import 'form';
+@import 'nav'
+
+
