@@ -1,0 +1,99 @@
+.timer {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 5px 30px;
+  grid-template-areas: 
+  'title title title'
+  'days hours minutes';
+  padding: 10px;
+  
+  @include laptop {
+    gap: 10px 20px;
+  }
+
+  @include tablet {
+    gap: 5px;
+  }
+
+  @include mobile {
+    gap: 0px 5px;
+  }
+
+  &_disabled {
+    display:none
+  }
+
+  &__title {
+    grid-area: title;
+    justify-self: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    color: $white;
+    
+    @include tablet {
+      font-size: 12px;
+    }
+    
+    @include mobile {
+      font-size: 8px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: 6px;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 130%;
+    align-items: baseline;
+    color: $white;
+
+    @include laptop {
+      font-size: 40px;
+    }
+    
+    @include tablet {
+      font-size: 30px;
+    }
+    
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  &__item-days {
+    grid-area: days;
+  }
+  
+  &__units {
+    font-size: 32px;
+    line-height: 130%;
+
+    @include laptop {
+      font-size: 20px;
+    }
+    
+    @include tablet {
+      font-size: 16px;
+    }
+    
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+  
+  &__item-hours {
+    grid-area: hours;
+  }
+
+  &__item-minutes {
+    grid-area: minutes;
+  }
+}
+
+
+
+
+

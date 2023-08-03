@@ -1,0 +1,82 @@
+.promo-cards {
+  padding-top: 30px;
+  padding-bottom: 50px;
+
+  @include laptop {
+    padding-top: 11px;
+  }
+
+  @include tablet {
+
+  }
+
+  @include mobile {
+
+  }
+
+  &__container {
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(100%/3 - 60px * 2), 1fr));
+    grid-template-rows: repeat(2, 516px);
+    justify-content: center;
+    row-gap: 60px;
+    column-gap: 60px;
+    grid-auto-flow: dense;
+  }
+
+  &__item {
+    display: grid;
+
+    &_size_two-colums {
+      grid-column: span 2;
+    }
+  }
+
+  &__item-box {
+  }
+
+  &__item-box-one {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    grid-template-rows: repeat(2, minmax(228px, 1fr));
+    column-gap: 60px;
+    row-gap: 26px;
+  }
+
+  &__item-box-two {
+  }
+
+  &__item-box-three {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    grid-template-rows: repeat(2, minmax(228px, 1fr));
+    column-gap: 60px;
+    row-gap: 26px;
+  }
+
+  &__item-box-four {
+  }
+
+  &__item-box-five {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    grid-template-rows: repeat(2, minmax(228px, 1fr));
+    column-gap: 60px;
+    row-gap: 26px;
+  }
+}
+
+@include laptop {
+
+}
+
+@include tablet {
+
+}
+
+@include mobile {
+
+}

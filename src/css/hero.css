@@ -40,7 +40,8 @@
 
   .hero__content {
     height: 314px;
-    border-radius: 16px; background-size: cover;
+    border-radius: 16px; 
+    background-size: cover;
   }
 
   .hero__title {
