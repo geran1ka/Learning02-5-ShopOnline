@@ -1,96 +1,548 @@
-
 .promo-card {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include tablet {
+    border-radius: 12px;
+  }
+
+  @include mobile {
+    border-radius: 8px;
+  }
 
   &_box-1 {
+    padding-bottom: 29px;
+    background: linear-gradient(181.33deg, rgba(0, 0, 0, 0) 9.23%, rgba(0, 0, 0, 0.2) 98.87%), url(../img/block-1.jpg) no-repeat center;
+    background-size: cover;
+
+    @include laptop {
+      max-height: 202px;
+      padding-bottom: 33px;
+      padding-left: 9px;
+      padding-right: 1px;
+    }
+    
+    @include tablet {
+      padding-bottom: 14px;
+    }
+    
+    @include mobile {
+      min-height: 130px;
+      padding-bottom: 11px;
+      padding-right: 34px;
+    }
   }
 
   &_box-2 {
+    align-items: flex-start;
+    padding-top: 76px;
+    padding-left: 14px;
+    background: linear-gradient(179.81deg, rgba(7, 7, 7, 0) 30.77%, rgba(0, 0, 0, 0.2) 99.83%), url(../img/block-2.jpg) no-repeat center;
+    background-size: cover;
+
+    @include laptop {
+      max-height: 202px;
+      padding-top: 55px;
+      padding-left: 11px;
+    }
+    
+    @include tablet {
+      padding: 15px 6px;
+    }
+    
+    @include mobile {
+      min-height: 130px;
+      padding: 30px 10px
+    }
   }
 
   &_box-3 {
-  }
+    align-self: end;
+    max-height: 228px;
+    background: linear-gradient(180.99deg, rgba(0, 0, 0, 0) 8.18%, rgba(0, 0, 0, 0.2) 99.15%), url(../img/block-3.jpg) no-repeat center;
+    background-size: cover;
+    background-position-y: 65%;
 
-  &_size {
+    @include laptop {
+      background-position-y: 63%;
+      background-size: 100% 161%;
+    }
+
+    @include tablet {
+      max-height: 126px;
+    }
+
+    @include mobile {
+      max-height: 118px;
+      align-self: flex-end;
+    }
   }
 
   &_box-4 {
+    max-width: 516px;
+    justify-self: end;
+    padding-bottom: 21px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 25.39%, rgba(0, 0, 0, 0.16) 100%), url(../img/block-4.jpg) no-repeat center;
+    background-size: 107% 144%;
+    background-position-x: -7%;
+
+    @include laptop {
+      padding-bottom: 19px;
+    }
+
+    @include tablet {
+      padding: 10px 7px;
+      background-size: 101% 125%;
+    }
+
+    @include mobile {
+      min-height: 280px;
+      padding: 10px;
+    }
   }
 
   &_box-5 {
+    max-height: 228px;
+    padding: 30px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 7.46%, rgba(0, 0, 0, 0.2) 100%), url(../img/block-5.jpg) no-repeat center;
+    background-size: cover;
+    background-position-y: 63%;
+
+    @include laptop {
+      padding-right: 50px;
+      padding-bottom: 28px;
+    }
+
+    @include tablet {
+      max-height: 126px;
+      padding: 19px 75px 21px 21px;
+    }
+
+    @include mobile {
+      max-height: 118px;
+      padding-bottom: 16px;
+      padding-left: 10px;
+    }
   }
 
   &_box-6 {
+    align-self: end;
+    padding: 30px 30px 38px;
+    max-height: 228px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 12.28%, rgba(0, 0, 0, 0.2) 100%), url(../img/block-6.jpg) no-repeat center;
+    background-size: cover;
+    background-position-y: 56%;
+
+    @include laptop {
+      padding-bottom: 36px;
+    }
+
+    @include tablet {
+      max-height: 126px;
+      align-self: flex-end;
+      padding: 23px 22px;
+    }
+
+    @include mobile {
+      max-height: 118px;
+      padding-bottom: 16px;
+      padding-left: 10px;
+    }
   }
 
   &_box-7 {
+    padding: 50px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 25.39%, rgba(0, 0, 0, 0.16) 100%), url(../img/block-7.jpg) no-repeat center;
+    background-size: cover;
+    background-position-y: 59%;
+
+    @include laptop {
+      max-height: 418px;
+      align-self: self-end;
+      padding-bottom: 38px;
+      padding-left: 30px;
+    }
+
+    @include tablet {
+      max-height: 337px;
+      align-self: flex-end;
+      padding-bottom: 29px;
+      padding-left: 26px;
+      background-position-y: 72%;
+    }
+
+    @include mobile {
+      padding: 11px 15px;
+      background-position-y: 64%;
+    }
   }
 
   &_box-8 {
-  }
+    background: linear-gradient(179.81deg, rgba(7, 7, 7, 0) 30.77%, rgba(0, 0, 0, 0.2) 99.83%), url(../img/block-8.jpg) no-repeat center;
+    background-size: cover;
 
-  &_size {
+    @include laptop {
+      background-size: cover;
+      background-position-y: 9%;
+    }
+
+    @include tablet {
+      max-height: 174px;
+      align-self: flex-end;
+      justify-self: center;
+    }
+
+    @include mobile {
+      min-height: 280px;
+    }
   }
 
   &_box-9 {
+    padding-bottom: 37px;
+    background: linear-gradient(179.81deg, rgba(7, 7, 7, 0) 30.77%, rgba(0, 0, 0, 0.2) 99.83%), url(../img/block-9.jpg) no-repeat center;
+    background-size: 135% 100%;
+    background-position-x: 73%;
+
+    @include laptop {
+      max-width: 196px;
+      justify-self: self-end;
+      padding-left: 5px;
+      padding-right: 2px;
+      padding-bottom: 18px;
+    }
+
+    @include tablet {
+      max-height: 83px;
+      max-width: 82px;
+      align-self: flex-end;
+      justify-self: center;
+      padding: 11px 2px;
+      margin-left: -3px;
+      margin-bottom: -1px;
+    }
+
+    @include mobile {
+      max-height: 130px;
+      max-width: 130px;
+      margin-bottom: 0;
+      margin-left: 0;
+      align-self: flex-start;
+      background-position-x: 51%;
+    }
   }
 
   &_box-10 {
+    background: linear-gradient(179.81deg, rgba(7, 7, 7, 0) 30.77%, rgba(0, 0, 0, 0.2) 99.83%), url(../img/block-110.jpg) no-repeat center;
+    background-size: cover;
+
+    @include laptop {
+      max-width: 196px;
+      justify-self: self-end;
+    }
+
+    @include tablet {
+      max-height: 83px;
+      max-width: 82px;
+      align-self: flex-end;
+      justify-self: center;
+      margin-left: -3px;
+      margin-bottom: 3px;
+    }
+
+    @include mobile {
+      max-height: 130px;
+      max-width: 130px;
+      margin-bottom: 0;
+      margin-left: 0;
+    }
+  }
+
+  &_size {
+    &_two-rows {
+      grid-row: span 2;
+    }
+    &_two-columns {
+      grid-column: span 2;
+    }
   }
 
   &__subitle {
+    font-family: 'Lato', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 130%;
+    color: $white;
 
-    &_box-1 {
+    @include laptop {
+      font-size: 24px;
+    }
+
+    @include tablet {
+      font-size: 20px;
+      line-height: 110%;
+    }
+
+    @include mobile {
+      font-size: 12px;
     }
 
     &_box-2 {
-    }
 
-    &_box-3 {
+      @include tablet {
+        font-size: 16px;
+        line-height: 130%;
+      }
     }
 
     &_box-4 {
+      padding: 23px 22px;
+      font-size: 40px;
+      background-color:#38c0eb;
+      border-radius: inherit;
+
+      @include laptop {
+        padding: 23px 24px 34px;
+        font-size: 30px;
+      }
+
+      @include tablet {
+        padding: 12px 30px 18px 27px;
+        font-size: 16px;
+      }
+
+      @include mobile {
+        padding-bottom: 11px;
+        padding-top: 6px;
+        padding-right: 23px;
+      }
     }
 
     &_box-5 {
+      font-size: 40px;
+      font-weight: 700;
+
+      @include laptop {
+        font-size: 30px;
+      }
+
+      @include tablet {
+        font-size: 16px;
+      }
     }
 
     &_box-6 {
+      font-size: 40px;
+      font-weight: 700;
+
+      @include laptop {
+        font-size: 30px;
+      }
+
+      @include tablet {
+        font-size: 16px;
+      }
     }
 
     &_box-7 {
-    }
+      padding: 30px 40px;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 120%;
+      color: var(--pink-color, #f91155);
+      text-transform: uppercase;
+      background-color: $white;
+      border-radius: inherit;
 
-    &_box-8 {
+      @include laptop {
+        padding: 24px 47px;
+        font-size: 30px;
+      }
+
+      @include tablet {
+        padding: 23px 34px;
+        font-size: 20px;
+        text-transform: uppercase;
+      }
+
+      @include mobile {
+        font-size: 12px;
+        padding: 8px 41px;
+      }
     }
 
     &_box-9 {
+      font-weight: 700;
+      @include laptop {
+        font-size: 20px;
+      }
+
+      @include tablet {
+        font-size: 12px;
+      }
     }
   }
 
   &__subitle-alternative {
+    font-weight: 700;
   }
 
   &__subitle-alternative-box-1 {
-  }
+    font-weight: 700;
+    font-size: 40px;
 
-  &__discount {
-
-    &_position {
+    @include laptop {
+      font-size: 30px;
     }
 
-    &_position-box-2 {
+    @include tablet {
+      font-size: 26px;
     }
 
-    &_position {
-    }
-
-    &_position-box-8 {
-    }
-
-    &_position-box-9 {
+    @include mobile {
+      font-size: 16px;
     }
   }
 
   &__subitle-alternative-box-4 {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 120%;
+
+    @include laptop {
+      font-size: 40px;
+    }
+
+    @include tablet {
+      font-size: 26px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &__discount {
+    position: absolute;
+    padding: 24px 8px;
+    width: 88px;
+    height: 88px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 130%;
+    border-radius: 50%;
+    color: $white;
+    background-color: var(--orange-color, #ffbd13);
+
+    @include tablet {
+      padding: 13px 7px;
+      width: 50px;
+      height: 50px;
+      font-size: 16px;
+    }
+
+    &_position_top-left {
+      top: 20px;
+      left: 20px;
+
+      @include laptop {
+        top: 18px;
+        left: 10px;
+      }
+
+      @include tablet {
+        top: 10px;
+        left: 9px;
+      }
+
+      @include mobile {
+        top: 5px;
+        left: 5px;
+      }
+    }
+
+    &_position_bottom-right {
+      right: 20px;
+      bottom: 22px;
+
+      @include laptop {
+        right: 10px;
+        bottom: 10px;
+      }
+
+      @include tablet {
+        right: 12px;
+        bottom: 12px;
+      }
+
+      @include mobile {
+        right: 5px;
+        bottom: 5px;
+      }
+    }
+
+    &_position-box-2 {
+      right: 20px;
+      bottom: 28px;
+
+      @include laptop {
+        right: 10px;
+        bottom: 10px;
+      }
+
+      @include tablet {
+        right: 12px;
+        bottom: 8px;
+      }
+    }
+
+    &_position-box-8 {
+      right: 20px;
+      bottom: 22px;
+
+      @include laptop {
+        right: 22px;
+        bottom: 10px;
+      }
+
+      @include tablet {
+        right: 10px;
+        bottom: 10px;
+      }
+    }
+
+    &_position-box-9 {
+      top: 20px;
+      left: 20px;
+      @include laptop {
+        top: 10px;
+        left: 6px;
+      }
+
+      @include tablet {
+        width: 36px;
+        height: 36px;
+        padding: 9px 4px;
+        font-size: 12px;
+        top: 4px;
+        left: 2px;
+      }
+
+      @include mobile {
+        padding: 13px 7px;
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+        top: 5px;
+        left: 5px;
+      }
+    }
   }
 }

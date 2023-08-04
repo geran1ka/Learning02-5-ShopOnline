@@ -1,20 +1,20 @@
 
 .aside {
-  grid-area: aside;
+  /* grid-area: aside; */
 }
 
 .aside-container {
-  max-height: 706px;
+  /* max-height: 706px;
   height: 100%;
   display: flex;
   flex-direction: column;
   gap: 50px;
-  height: 100%;
+  height: 100%; */
 }
 
 .aside__block-one,
 .aside__block-two {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: end;
   padding: 43px 30px;
@@ -22,104 +22,104 @@
   height: 328px;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 100%;
+  background-size: 100%; */
 }
 
 .aside__block-one {
-  background-image: url('../img/blog/aside/blockOne.jpg');
+  /* background-image: url('../img/blog/aside/blockOne.jpg'); */
 }
 
 .aside__title {
-  width: 100%;
+  /* width: 100%;
   font-weight: 700;
   font-size: 32px;
   line-height: 130%;
-  color: var(--main-color, #FFFFFF);
+  color: var(--main-color, #FFFFFF); */
 }
 
 .aside__title:hover {
-  color: var(--blue-color)
+  /* color: var(--blue-color) */
 }
 
 .aside__description {
-  font-weight: 700;
+  /* font-weight: 700;
   font-size: 16px;
   line-height: 130%;
-  color: var(--main-color, #FFFFFF);
+  color: var(--main-color, #FFFFFF); */
 }
 
 .aside__block-two {
-  background-image: url('../img/blog/aside/blockTwo.jpg') ;
+  /* background-image: url('../img/blog/aside/blockTwo.jpg') ; */
 }
 
 
 @media (max-width: 1440px) {
   .aside-container {
-    max-height: 706px;
+    /* max-height: 706px;
     flex-direction: row;
     gap: 30px;
-    justify-content: center;
+    justify-content: center; */
   }
   
   .aside__block-one,
   .aside__block-two {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: end;
     padding: 43px 30px;
     width: 422px;
-    height: 270px;
+    height: 270px; */
   }
   .aside__title {
-    font-size: 26px;
+    /* font-size: 26px; */
   }
 }
 
 @media (max-width: 980px) {
   .aside-container {
-    max-height: 706px;
+    /* max-height: 706px;
     flex-direction: column;
     gap: 30px;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
   }
   
   .aside__block-one,
   .aside__block-two {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: end;
     padding: 43px 30px;
     width: 530px;
-    height: 320px;
+    height: 320px; */
   }
 
   .aside__title {
-    font-size: 26px;
+    /* font-size: 26px; */
   }
 }
 
 @media (max-width: 640px) {
   .aside-container {
-    gap: 15px;
+    /* gap: 15px; */
   }
   
   .aside__block-one,
   .aside__block-two {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: end;
-    padding: 20px;
+    padding: 20px; */
 
-    width: 280px;
-    height: 166px;
+    /* width: 280px;
+    height: 166px; */
   }
 
   .aside__title {
-    font-size: 16px;
+    /* font-size: 16px; */
   }
 
   .aside__description {
-    font-size: 12px;
+    /* font-size: 12px; */
   }
 }

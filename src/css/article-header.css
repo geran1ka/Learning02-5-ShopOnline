@@ -57,17 +57,17 @@
 
 @media (max-width: 640px) {
   .article-header__list {
-    gap: 5px;
+    /* gap: 5px; */
   }
   
   .article-header__item {
-    gap: 5px;
+    /* gap: 5px; */
   }
   
   .article-header__item:not(:last-child)::after {
-    width: 15px;
+    /* width: 15px;
     height: 15px;
-    background-size: 15px 15px;
+    background-size: 15px 15px; */
   } 
   
   .article-header__link {

@@ -1,0 +1,181 @@
+.blog-item {
+  display: flex;
+  gap: 30px;
+
+  @include laptop {
+
+  }
+
+  @include tablet {
+
+  }
+
+  @include mobile {
+    gap: 20px;
+  }
+
+  &__img {
+    max-width: 195px;
+    max-height: 195px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+
+    @include laptop {
+
+    }
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+      max-width: 135px;
+      height: 135px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+  }
+
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    align-self: self-end;
+
+    @include laptop {
+      align-self: center;
+    }
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+      gap: 10px;
+      max-height: 182px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 130%;
+    color: $black;
+
+    @include laptop {
+      font-size: 27px;
+    }
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+      font-size: 22px;
+    }
+  }
+
+  &__date {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    color: $gray;
+
+    @include laptop {
+
+    }
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+  }
+
+  &__count-wrapper {
+    display: flex;
+    justify-self: end;
+    gap: 25px;
+
+    @include laptop {
+
+    }
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+      gap: 20px;
+    }
+  }
+
+  &__views-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    color: $gray;
+
+    @include laptop {
+
+    }
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+
+    }
+  }
+  &__views-counter {
+    @include laptop {
+
+    }
+
+    @include tablet {
+
+    }
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__comment-counter {
+    @include laptop {
+
+    }
+
+    @include tablet {
+
+    }
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__views-icon {
+    width: 24px;
+    height: 24px;
+
+    @include laptop {
+
+    }
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

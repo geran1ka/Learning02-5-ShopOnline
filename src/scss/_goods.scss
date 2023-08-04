@@ -1,0 +1,234 @@
+.goods-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  @include laptop {
+
+  }
+  
+  @include tablet {
+  
+  }
+  
+  @include mobile {
+  
+  }
+}
+
+.goods {
+  padding-top: 50px;
+  padding-bottom: 140px;
+
+  @include laptop {
+
+  }
+  
+  @include tablet {
+  
+  }
+  
+  @include mobile {
+  
+  }
+
+	&__title {
+    font-family: 'Lato', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 130%;
+    color: $black;
+
+    @include laptop {
+
+    }
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+
+    }
+	}
+
+	&__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 420px;
+    gap: 50px 30px;
+
+    @include laptop {
+
+    }
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+
+    }
+	}
+
+	&__item {
+
+    @include laptop {
+
+    }
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+
+    }
+	}
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+	&__title {
+    order: 2;
+    font-family: 'Lato', Arial, sans-serif;
+    font-size: 22px;
+    line-height: 100%;
+    color: $black;
+
+    @include laptop {
+
+    }
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+
+    }
+	}
+
+	&__img-wrapper {
+    position: relative;
+    margin-bottom: 5px;
+    line-height: 0;
+
+    @include laptop {
+
+    }
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+
+    }
+	}
+
+	&__img {
+    border-radius: 14px;
+
+    @include laptop {
+
+    }
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+
+    }
+	}
+
+	&__discount {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 24px 8px;
+    width: 88px;
+    height: 88px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 130%;
+    border-radius: 50%;
+    color: $white;
+    background-color: $orange;
+
+    @include laptop {
+
+    }
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+
+    }
+	}
+
+	&__price-wrapper {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+
+    @include laptop {
+
+    }
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+
+    }
+	}
+
+	&__price {
+    font-family: 'Lato', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 150%;
+    color: $black;
+
+    @include laptop {
+
+    }
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+
+    }
+	}
+
+	&__price-discount {
+    font-family: 'Lato', Arial, sans-serif;
+    font-size: 20px;
+    line-height: 150%;
+    color: $black;
+    text-decoration: line-through;
+
+    @include laptop {
+
+    }
+
+    @include tablet {
+
+    }
+
+    @include mobile {
+
+    }
+	}
+}
+

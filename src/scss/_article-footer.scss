@@ -1,0 +1,241 @@
+.article-footer {
+  grid-area: footer;
+
+  @include laptop {
+
+  }
+  
+  @include tablet {
+  
+  }
+  
+  @include mobile {
+  
+  }
+
+  &__container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    @include laptop {
+
+    }
+    
+    @include tablet {
+    
+    }
+    
+    @include mobile {
+    
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+    @include laptop {
+
+    }
+    
+    @include tablet {
+    
+    }
+    
+    @include mobile {
+    
+    }
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    color: $black;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    transition: 
+      color .3s ease-in-out,
+      border-bottom-color .3s ease-in-out,
+      transform .6s ease-in-out;
+    outline: none;
+    border-bottom: 2px solid transparent;
+        @include laptop {
+
+    }
+    
+    @include tablet {
+    
+    }
+    
+    @include mobile {
+    
+    }
+  
+    &::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-size: 24px 24px;
+      background: url('../img/blog/backspace.svg') center no-repeat;
+      transition: background-image .3s ease-in-out;
+    }
+
+    &:hover {
+      color: $blue;
+    }
+  
+    &:hover::before {
+      background-image: url('../img/blog/backspaceblue.svg');
+    }
+  
+    &:focus {
+      border-bottom-color: var(--gray-dark, #525252);
+    }
+  
+    &:active {
+      transform: rotateY(360deg);
+    }
+  }
+
+  &__development {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 15px;
+
+    @include laptop {
+
+    }
+    
+    @include tablet {
+      gap: 10px;
+
+    }
+    
+    @include mobile {
+    
+    }
+  }
+
+  &__author {
+    margin-bottom: 5px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 150%;
+    color: $black;
+
+    @include laptop {
+
+    }
+    
+    @include tablet {
+      font-size: 16px;
+    }
+    
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  &__date {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    color: $gray;
+    
+    @include laptop {
+
+    }
+    
+    @include tablet {
+      font-size: 12px;
+    }
+    
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  &__count-wrapper {
+    display: flex;
+    justify-self: end;
+    align-self: start;
+    gap: 25px;
+
+    @include laptop {
+
+    }
+    
+    @include tablet {
+      font-size: 12px;
+    }
+    
+    @include mobile {
+      gap: 10px;
+    }
+  }
+
+  &__views-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    color: $gray;
+    transition: 
+      color .3s ease-in-out,
+      border-bottom-color .3s ease-in-out,
+      transform .6s ease-in-out;
+    outline: none;
+    border-bottom: 2px solid transparent;
+    
+    @include laptop {
+
+    }
+    
+    @include tablet {
+      font-size: 12px;
+    }
+    
+    @include mobile {
+
+    }
+
+      
+    &:hover {
+      color: var(--blue-color);
+    }
+
+    &:focus {
+      border-bottom-color: $gray;
+    }
+
+    &:active {
+      transform: scale(1.2);
+    }
+  }
+  &__views-icon {
+    width: 24px;
+    height: 24px;
+
+    @include laptop {
+
+    }
+    
+    @include tablet {
+      width: 16px;
+      height: 16px;
+    }
+    
+    @include mobile {
+    
+    }
+  }
+}
