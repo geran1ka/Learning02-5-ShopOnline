@@ -1,30 +1,9 @@
 .article-header {
   grid-area: header;
 
-  @include laptop {
-
-  }
-
-  @include tablet {
-
-  }
-
-  @include mobile {
-
-  }
-
-
   &__list {
     display: flex;
     gap: 10px;
-
-    @include laptop {
-
-    }
-  
-    @include tablet {
-  
-    }
   
     @include mobile {
       gap: 5px;
@@ -35,14 +14,6 @@
     display: flex;
     gap: 10px;
     position: relative;
-
-    @include laptop {
-
-    }
-  
-    @include tablet {
-  
-    }
   
     @include mobile {
       gap: 5px;
@@ -78,14 +49,6 @@
       transform .6s ease-in-out;
     outline: none;
     border-bottom: 2px solid transparent;
-    
-    @include laptop {
-
-    }
-  
-    @include tablet {
-  
-    }
   
     @include mobile {
       font-size: 12px;
@@ -96,29 +59,17 @@
       color: $gray;
       pointer-events: none;
       cursor: pointer;
-
-      @include laptop {
-
-      }
-    
-      @include tablet {
-    
-      }
-    
-      @include mobile {
-    
-      }
+    }
+    &:focus {
+      color: $blue-focus;
     }
 
     &:hover {
-      color: $blue;
-    }
-  
-    &:focus {
-      border-bottom-color: $dark-gray;
+      color: $blue-hover;
     }
   
     &:active {
+      color: $blue-hover;
       transform: rotateY(360deg);
     }
   }

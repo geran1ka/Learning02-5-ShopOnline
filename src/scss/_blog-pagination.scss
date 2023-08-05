@@ -1,77 +1,56 @@
 .blog-pagination {
-  padding-top: 50px;
-
   display: flex; 
   gap: 30px;
   align-items: center;
   justify-content: space-between;
   max-width: max-content;
   margin: 0 auto;
-
-  @include laptop {
-
-  }
   
   @include tablet {
-  
+    gap: 15px;
   }
   
   @include mobile {
-    gap: 20px;
+    gap: 15px;
   }
 
 
-  .blog-pagination__link {
+  &__link {
+    display: flex;
+    align-items: center;
+    width: 37px;
+    height: 37px;
     line-height: 0;
     color: $blue;
 
-    @include laptop {
-
-    }
-    
+    transition: color .3s ease-in-out;
+  
     @include tablet {
-    
+      width: 28px;
+      height: 28px;
     }
-    
-    @include mobile {
-    
+
+    &_disabled {
+      color: $gray;
+      pointer-events: none;
+    }
+
+    &:focus {
+      color: $blue-focus;
+    }
+
+    &:hover {
+      color: $blue-hover;
     }
   }
 
-  .blog-pagination__link_disabled {
-    color: $gray;
 
-    @include laptop {
-
-    }
-    
-    @include tablet {
-    
-    }
-    
-    @include mobile {
-    
-    }
-  }
-
-  .blog-pagination__list {
+  &__list {
     display: flex;
     gap: 6px;
-
-    @include laptop {
-
-    }
-    
-    @include tablet {
-    
-    }
-    
-    @include mobile {
-    
-    }
   }
 
-  .blog-pagination__item {
+  &__item {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,34 +63,34 @@
     line-height: 130%;
     color: $black;
 
-    @include laptop {
-
-    }
+    transition: color .3s ease-in-out,
+      border-color .3s ease-in-out;
     
     @include tablet {
-    
+      min-width: 20px;
+      min-height: 20px;
+      font-size: 12px;
+      border-radius: 4px;
     }
-    
-    @include mobile {
-      min-width: 24px;
-      min-height: 24px;
-      font-size: 14px;
-    }
-  }
 
-  .blog-pagination__item_active {
-    border-color: $blue;
-
-    @include laptop {
-
+    &_active {
+      color: $blue-hover;
+      border-color: $blue-hover;
     }
-    
-    @include tablet {
-    
+
+    &:focus {
+      color: $blue-focus;
+      border-color: $blue-hover;
     }
-    
-    @include mobile {
-    
+
+    &:hover {
+      color: $blue-hover;
+      border-color: $blue-hover;
+    }
+
+    &:active {
+      color: $blue-hover;
+      border-color: $blue-hover;
     }
   }
 }

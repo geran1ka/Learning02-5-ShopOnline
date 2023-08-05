@@ -20,7 +20,7 @@
   &__container {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 190px 151px 757px 354px;
+    grid-template-columns: 190px 151px 1fr 354px;
     grid-template-rows: min-content;
     column-gap: 10px;
     justify-content: space-between;
@@ -92,6 +92,8 @@
     border: none;
     border-radius: 10px;
 
+    transition: background-color .3s ease-in-out;
+
     &::before {
       content: "";
       position: absolute;
@@ -133,6 +135,14 @@
       padding: 7px 14px 7px 31px;
       font-size: 12px;
       border-radius: 4px;
+    }
+
+    &:focus {
+      background-color: $blue-focus;
+    }
+
+    &:hover {
+      background-color: $blue-hover;
     }
   }
   

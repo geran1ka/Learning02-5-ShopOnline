@@ -40,6 +40,9 @@
     border-radius: 30px;
     background-color: $blue;
 
+    transition: background-color .3s ease-in-out;
+
+
     @include laptop {
       align-self: flex-end;
     }
@@ -50,6 +53,14 @@
     
     @include mobile {
       padding: 5px 15px;
+    }
+
+    &:focus {
+      background-color: $blue-focus;
+    }
+
+    &:hover {
+      background-color: $blue-hover;
     }
   }
 }
@@ -67,4 +78,5 @@
       width: 20px;
     }
   }
+  
 }

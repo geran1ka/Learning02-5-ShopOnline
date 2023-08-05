@@ -12,6 +12,18 @@
       height: 30px;
       width: 30px;
     }
+
+    &:focus {
+      color: $blue-focus;
+    }
+
+    &:hover {
+      color: $blue-hover;
+    }
+
+    &:active {
+      color: $red;
+    }
   }
   
   &__link {
@@ -27,13 +39,35 @@
     @include mobile {
       position: relative;
     }
+
   }
   
   &__svg {
+    stroke-width: 3px;
+    transition: color .3s ease-in-out;
+
     @include tablet {
       height: 30px;
       width: 30px;
     }
+
+    &_heart {
+      color: $blue;
+    }
+    
+    &:focus {
+      color: $blue-focus;
+    }
+
+    &:hover {
+      color: $blue-hover;
+    }
+
+    &:active {
+      color: $red;
+    }
+
+
   }
   
   &__text {

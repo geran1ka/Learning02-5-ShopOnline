@@ -32,27 +32,48 @@ export const renderPagination = (data) => {
     className: 'blog-pagination__list',
   });
 
-  if (page > 1) {
+  if (page > pages - 1) {
+    console.log('page - 2');
     const paginationItem = createElem('li', {
       className: 'blog-pagination__item',
-      textContent: page - 1,
+      textContent: page - 2,
     });
     paginationList.append(paginationItem);
   }
 
-  const paginationItemT = createElem('li', {
+  if (page > 1) {
+    console.log('page - 1');
+    const paginationItemTwo = createElem('li', {
+      className: 'blog-pagination__item',
+      textContent: page - 1,
+    });
+    paginationList.append(paginationItemTwo);
+  }
+
+  const paginationItemThree = createElem('li', {
     className: 'blog-pagination__item blog-pagination__item_active',
     textContent: page,
   });
 
-  paginationList.append(paginationItemT);
+  paginationList.append(paginationItemThree);
 
   if (page < pages) {
-    const paginationItemTh = createElem('li', {
+    console.log('page + 1');
+    const paginationItemFour = createElem('li', {
       className: 'blog-pagination__item',
       textContent: page + 1,
     });
-    paginationList.append(paginationItemTh);
+    paginationList.append(paginationItemFour);
+  }
+
+  console.log(page, pages);
+  if (page < 2) {
+    console.log('page + 2');
+    const paginationItemFive = createElem('li', {
+      className: 'blog-pagination__item',
+      textContent: page + 2,
+    });
+    paginationList.append(paginationItemFive);
   }
 
   pagination.append(linkBack, paginationList, linkNext);

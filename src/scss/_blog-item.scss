@@ -3,15 +3,11 @@
   gap: 30px;
 
   @include laptop {
-
-  }
-
-  @include tablet {
-
+    gap: 20px;
   }
 
   @include mobile {
-    gap: 20px;
+    gap: 7px;
   }
 
   &__img {
@@ -22,18 +18,16 @@
     border-radius: 20px;
 
     @include laptop {
-
-    }
-
-    @include tablet {
-
+      max-width: 140px;
+      max-height: 140px;
+      border-radius: 16px;
     }
 
     @include mobile {
-      max-width: 135px;
-      height: 135px;
+      max-width: 60px;
+      height: 60px;
       object-fit: cover;
-      border-radius: 20px;
+      border-radius: 8px;
     }
   }
 
@@ -45,15 +39,11 @@
 
     @include laptop {
       align-self: center;
-    }
-
-    @include tablet {
-
+      gap: 11px;
     }
 
     @include mobile {
-      gap: 10px;
-      max-height: 182px;
+      gap: 14px;
     }
   }
 
@@ -64,15 +54,26 @@
     color: $black;
 
     @include laptop {
-      font-size: 27px;
+      font-size: 24px;
+      line-height: 120%;
     }
 
     @include tablet {
-
+      font-size: 22px;
     }
 
     @include mobile {
-      font-size: 22px;
+      font-size: 14px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @include mobile {
+      flex-direction: row;
     }
   }
 
@@ -83,16 +84,12 @@
     color: $gray;
 
     @include laptop {
-
-    }
-
-    @include tablet {
-
+      font-size: 14px;
     }
 
     @include mobile {
-      margin-bottom: 10px;
-      font-size: 14px;
+      font-size: 8px;
+      display: inline-flex;
     }
   }
 
@@ -102,15 +99,12 @@
     gap: 25px;
 
     @include laptop {
-
-    }
-
-    @include tablet {
-
+      gap: 20px;
     }
 
     @include mobile {
-      gap: 20px;
+      gap: 6px;
+      display: inline-flex;
     }
   }
 
@@ -124,40 +118,11 @@
     color: $gray;
 
     @include laptop {
-
-    }
-
-    @include tablet {
-
-    }
-
-    @include mobile {
-
-    }
-  }
-  &__views-counter {
-    @include laptop {
-
-    }
-
-    @include tablet {
-
-    }
-    @include mobile {
       font-size: 14px;
     }
-  }
 
-  &__comment-counter {
-    @include laptop {
-
-    }
-
-    @include tablet {
-
-    }
     @include mobile {
-      font-size: 14px;
+      font-size: 8px;
     }
   }
 
@@ -165,17 +130,9 @@
     width: 24px;
     height: 24px;
 
-    @include laptop {
-
-    }
-
-    @include tablet {
-
-    }
-
     @include mobile {
-      width: 16px;
-      height: 16px;
+      width: 13px;
+      height: 13px;
     }
   }
 }

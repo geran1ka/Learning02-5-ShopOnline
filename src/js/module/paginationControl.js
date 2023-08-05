@@ -13,26 +13,33 @@ export const paginationController = async (pagination, linkBack, linkNext, page,
   });
   linkNext.addEventListener('click', async e => {
     e.preventDefault();
-    if (page + 1 < pages) {
+    if (page + 1 <= pages) {
       page++;
     }
   });
 
-  pagination.addEventListener('click', async () => {
-    renderBlog(await getDataArticle(API_URL_POST, `?page=${page}`));
-    window.location.assign(`${url}?page=${page}`);
+  pagination.addEventListener('click', async e => {
+    e.preventDefault();
+    if (e.target.closest('.blog-pagination__link')) {
+      renderBlog(await getDataArticle(API_URL_POST, `?page=${page}`));
+      window.location.assign(`${url}?page=${page}`);
+    }
   });
 
   if (page >= pages) {
     linkNext.classList.add('blog-pagination__link_disabled');
+    linkNext.setAttribute('disabled', 'disabled');
   } else if (page <= 1) {
     linkBack.classList.add('blog-pagination__link_disabled');
+    linkBack.setAttribute('disabled', 'disabled');
   } else {
     if (linkBack.classList.contains('.blog-pagination__link_disabled')) {
       linkBack.classList.remove('blog-pagination__link_disabled');
+      linkBack.setAttribute('disabled', 'disabled');
     }
     if (linkNext.classList.contains('.blog-pagination__link_disabled')) {
       linkNext.classList.remove('blog-pagination__link_disabled');
+      linkNext.removeAttribute('disabled');
     }
   }
   return page;

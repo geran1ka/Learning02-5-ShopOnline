@@ -4,15 +4,18 @@
   flex: 1 1 auto;
   
   @include laptop {
-
+    padding-top: 20px;
+    padding-bottom: 100px;
   }
 
   @include tablet {
-
+    padding-top: 11px;
+    padding-bottom: 80px;
   }
 
   @include mobile {
-
+    padding-top: 0;
+    padding-bottom: 52px;
   }
 }
 
@@ -27,27 +30,23 @@
     gap: 80px;
 
     @include laptop {
+      grid-template-columns: 1fr 300px;
+        gap: 60px 20px;
+    }
+    
+    @include tablet {
       grid-template-columns: 1fr;
       grid-template-areas: 
         'header'
         'article'
         'footer'
         'aside';
-        gap: 50px;
-        padding: 100px 0;
-        max-width: 1340px;
-    }
-    
-    @include tablet {
-      // gap: 30px;
-      padding: 80px 0;
-      gap: 20px;
+      gap: 35px;
     }
     
     @include mobile {
-      // gap: 30px;
-      padding: 40px 0;
-      gap: 15px;
+
+      gap: 30px;
     }
 }
 
@@ -57,15 +56,7 @@
 
   
 @include laptop {
-
-}
-
-@include tablet {
-
-}
-
-@include mobile {
-
+  margin-bottom: 0;
 }
 
   &__container {
@@ -76,15 +67,15 @@
     gap: 40px;
     
     @include laptop {
-
+      gap: 40px;
     }
 
     @include tablet {
-
+      gap: 20px;
     }
 
     @include mobile {
-
+      gap: 10px;
     }
   }
 
@@ -95,15 +86,15 @@
     color: $black;
     
     @include laptop {
-
+      font-size: 40px;
     }
 
     @include tablet {
-      font-size: 32px;
+      font-size: 28px;
     }
 
     @include mobile {
-      font-size: 26px;
+      font-size: 18px;
     }
   }
 
@@ -115,17 +106,18 @@
     margin-bottom: 33px;
     
     @include laptop {
-
+      font-size: 18px;
     }
 
     @include tablet {
       font-size: 16px;
-      margin-bottom: 24px;
+      line-height: 130%;
+      margin-bottom: 21px;
     }
 
     @include mobile {
       font-size: 12px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
   }
 

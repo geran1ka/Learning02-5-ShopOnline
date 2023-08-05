@@ -5,36 +5,62 @@
   color: $white;
   
   @include laptop {
-
+    padding-top: 60px;
+    padding-bottom: 44px;
   }
 
   @include tablet {
-
+    padding-top: 40px;
+    padding-bottom: 37px;
   }
 
   @include mobile {
-
+    padding-top: 30px;
+    padding-bottom: 20px;
   }
 
 	&__container {
     display: grid;
-    grid-template-columns: minmax(305px, 2fr) minmax(578px, 4fr) minmax(435px, 3fr) minmax(450px, 3fr);
+    grid-template-columns: minmax(190px, 2fr) minmax(480px, 4fr) minmax(245px, 3fr) minmax(245px, 3fr);
     grid-template-rows: minmax(min-content, 1fr) min-content;
     grid-template-areas: 
       'logo catalog info contacts'
       'copyright . . developer';
     row-gap: 50px;
+    column-gap: 30px;
     
     @include laptop {
-
+      grid-template-columns: minmax(225px, 2fr) minmax(265px, 3fr) minmax(280px, 3fr);
+      column-gap: 75px;
+      row-gap: 60px;
+      grid-template-areas: 
+      'logo . .'
+      'catalog info contacts'
+      'copyright  . developer';
     }
 
     @include tablet {
-
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 15px;
+      row-gap: 53px;
     }
 
     @include mobile {
-
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 
+        minmax(34px, min-content)
+        minmax(26px, min-content)
+        minmax(36px, min-content)
+        minmax(160px, min-content)
+        minmax(31px, min-content);
+      grid-template-areas: 
+      'logo logo'
+      'catalog catalog'
+      'info info'
+      'contacts contacts'
+      'copyright developer';
+      row-gap: 20px;
+      column-gap: 20px;
     }
 	}
 
@@ -51,11 +77,12 @@
     }
 
     @include tablet {
-
+      max-height: 33px;
+      padding: 0;
     }
 
     @include mobile {
-
+      max-height: 27px;
     }
 
     path:last-child {
@@ -84,15 +111,15 @@
     row-gap: 40px;
 
     @include laptop {
-
+      row-gap: 30px;
     }
 
     @include tablet {
-
+      row-gap: 20px;
     }
 
     @include mobile {
-
+      row-gap: 10px;
     }
 	}
 
@@ -103,16 +130,12 @@
     line-height: 130%;
     color: $white;
 
-    @include laptop {
-
-    }
-
     @include tablet {
-
+      font-size: 26px;
     }
 
     @include mobile {
-
+      font-size: 20px;
     }
 	}
 
@@ -122,16 +145,13 @@
     row-gap: 15px;
     column-gap: 30px;
 
-    @include laptop {
-
-    }
-
     @include tablet {
-
+      row-gap: 10px;
     }
 
     @include mobile {
-
+      display: none;
+      row-gap: 6px;
     }
 	}
 
@@ -141,16 +161,12 @@
     font-weight: 700;
     line-height: 150%;
 
-    @include laptop {
-
-    }
-
     @include tablet {
-
+      font-size: 16px;
     }
 
     @include mobile {
-
+      font-size: 12px;
     }
 	}
 
@@ -159,24 +175,12 @@
     transition: color .3s ease-in-out,
     transform .3s ease-in-out;
 
-    @include laptop {
-
-    }
-
-    @include tablet {
-
-    }
-
-    @include mobile {
-
+    &:focus {
+      color: $blue-focus;
     }
 
     &:hover {
-      color: $blue;
-    }
-
-    &:active {
-      color: $red;
+      color: $blue-hover;
     }
 	}
 
@@ -187,15 +191,15 @@
     row-gap: 40px;
 
     @include laptop {
-
+      row-gap: 30px;
     }
 
     @include tablet {
-
+      row-gap: 20px;
     }
 
     @include mobile {
-
+      row-gap: 10px;
     }
 	}
 
@@ -206,16 +210,12 @@
     line-height: 130%;
     color: $white;
 
-    @include laptop {
-
-    }
-
     @include tablet {
-
+      font-size: 26px;
     }
 
     @include mobile {
-
+      font-size: 20px;
     }
 	}
 
@@ -223,17 +223,15 @@
     display: flex;
     flex-direction: column;
     row-gap: 15px;
-    
-    @include laptop {
-
-    }
+    column-gap: 30px;
 
     @include tablet {
-
+      row-gap: 10px;
     }
 
     @include mobile {
-
+      row-gap: 6px;
+      display: none;
     }
 	}
 
@@ -243,16 +241,12 @@
     line-height: 150%;
     color: $white;
 
-    @include laptop {
-
-    }
-
     @include tablet {
-
+      font-size: 16px;
     }
 
     @include mobile {
-
+      font-size: 12px;
     }
 	}
 
@@ -261,24 +255,12 @@
     transition: color .3s ease-in-out,
     transform .3s ease-in-out;
 
-    @include laptop {
-
-    }
-
-    @include tablet {
-
-    }
-
-    @include mobile {
-
+    &:focus {
+      color: $blue-focus;
     }
 
     &:hover {
-      color: $blue;
-    }
-
-    &:active {
-      color: $red;
+      color: $blue-hover;
     }
 	}
 
@@ -289,15 +271,15 @@
     row-gap: 40px;
     
     @include laptop {
-
+      row-gap: 35px;
     }
 
     @include tablet {
-
+      row-gap: 20px;
     }
 
     @include mobile {
-
+      row-gap: 10px;
     }
 	}
 
@@ -308,16 +290,12 @@
     line-height: 130%;
     color: $white;
 
-    @include laptop {
-
-    }
-
     @include tablet {
-
+      font-size: 26px;
     }
 
     @include mobile {
-
+      font-size: 20px;
     }
 	}
 
@@ -325,17 +303,13 @@
     display: flex;
     flex-direction: column;
     row-gap: 21px;
-    
-    @include laptop {
-
-    }
 
     @include tablet {
-
+      row-gap: 13px;
     }
 
     @include mobile {
-
+      row-gap: 10px;
     }
 	}
 
@@ -346,16 +320,12 @@
     color: $white;
     font-style: normal;
 
-    @include laptop {
-
-    }
-
     @include tablet {
-
+      font-size: 12px;
     }
 
     @include mobile {
-
+      font-size: 10px;
     }
 	}
 
@@ -364,24 +334,12 @@
     transition: color .3s ease-in-out,
     transform .3s ease-in-out;
 
-    @include laptop {
-
-    }
-
-    @include tablet {
-
-    }
-
-    @include mobile {
-
+    &:focus {
+      color: $blue-focus;
     }
 
     &:hover {
-      color: $blue;
-    }
-
-    &:active {
-      color: $red;
+      color: $blue-hover;
     }
 	}
 
@@ -397,11 +355,11 @@
     }
 
     @include tablet {
-
+      font-size: 12px;
     }
 
     @include mobile {
-
+      font-size: 10px;
     }
 	}
 
@@ -415,16 +373,14 @@
     line-height: 130%;
     color: $white;
 
-    @include laptop {
-
-    }
-
     @include tablet {
-
+      gap: 8px;
+      font-size: 12px;
     }
 
     @include mobile {
-
+      gap: 5px;
+      font-size: 10px;
     }
 	}
 
@@ -433,24 +389,12 @@
     transition: color .3s ease-in-out,
     transform .3s ease-in-out;
 
-    @include laptop {
-
-    }
-
-    @include tablet {
-
-    }
-
-    @include mobile {
-
+    &:focus {
+      color: $blue-focus;
     }
 
     &:hover {
-      color: $blue;
-    }
-
-    &:active {
-      color: $red;
+      color: $blue-hover;
     }
 	}
 }
@@ -461,57 +405,37 @@
     gap: 20px;
     padding: 15px 0;
 
-    @include laptop {
-
-    }
-
     @include tablet {
-
+      gap: 15px;
+      padding: 17px 0;
     }
 
     @include mobile {
-
+      padding: 14px 0;
     }
 	}
 
-	&__item {
-    
-    @include laptop {
+  &__item {
+    color: $white;
 
+    &:nth-of-type(4) {
+      color: $black;
     }
-
-    @include tablet {
-
-    }
-
-    @include mobile {
-
-    }
-	}
+  }
 
 	&__link {
       line-height: 0;
-      color: $white;
+      // color: $white;
       transition: color .3s ease-in-out,
       transform .3s ease-in-out;
-    @include laptop {
+      display: block;
 
-    }
-
-    @include tablet {
-
-    }
-
-    @include mobile {
-
+    &:focus {
+      color: $blue-focus;
     }
 
     &:hover {
-      color: $blue;
-    }
-
-    &:active {
-      color: $red;
+      color: $blue-hover;
     }
 	}
 }

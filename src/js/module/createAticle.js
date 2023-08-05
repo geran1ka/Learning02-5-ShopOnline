@@ -67,6 +67,10 @@ export const createArticle = async (data) => {
     textContent: authorName.data.name ? authorName.data.name : 'Аноним',
   });
 
+  const footerInfoWrapper = createElem('div', {
+    className: 'article-footer__info',
+  });
+
   const footerDate = createElem('div', {
     className: 'article-footer__date',
     innerHTML: `
@@ -111,7 +115,8 @@ export const createArticle = async (data) => {
 
 
   footerCountWrapper.append(footerViewsLink, footerCommentLink);
-  footerDevelopment.append(author, footerDate, footerCountWrapper);
+  footerInfoWrapper.append(footerDate, footerCountWrapper);
+  footerDevelopment.append(author, footerInfoWrapper);
   footerNavigation.append(footerLink);
   footerContainer.append(footerNavigation, footerDevelopment);
   footer.append(footerContainer);

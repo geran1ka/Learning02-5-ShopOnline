@@ -35,18 +35,6 @@
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-
-    @include laptop {
-
-    }
-    
-    @include tablet {
-    
-    }
-    
-    @include mobile {
-    
-    }
   }
 
   &__link {
@@ -63,16 +51,14 @@
       transform .6s ease-in-out;
     outline: none;
     border-bottom: 2px solid transparent;
-        @include laptop {
-
-    }
     
-    @include tablet {
-    
+    @include laptop {
+      font-size: 14px;
+      gap: 5px;
     }
     
     @include mobile {
-    
+      font-size: 10px;
     }
   
     &::before {
@@ -83,6 +69,12 @@
       background-size: 24px 24px;
       background: url('../img/blog/backspace.svg') center no-repeat;
       transition: background-image .3s ease-in-out;
+
+      @include mobile {
+        width: 16px;
+        height: 16px;
+        background-size: 16px 16px;
+      }
     }
 
     &:hover {
@@ -106,36 +98,39 @@
     display: flex;
     flex-direction: column;
     align-items: end;
-    gap: 15px;
+    gap: 20px;
 
     @include laptop {
-
+      gap: 30px;
     }
-    
-    @include tablet {
-      gap: 10px;
-
-    }
-    
+  
     @include mobile {
-    
+      gap: 20px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include laptop {
+      gap: 14px;
+    }
+
+    @include mobile {
+      gap: 10px;
     }
   }
 
   &__author {
-    margin-bottom: 5px;
-    font-style: normal;
     font-weight: 400;
     font-size: 22px;
     line-height: 150%;
     color: $black;
 
     @include laptop {
-
-    }
-    
-    @include tablet {
-      font-size: 16px;
+      font-size: 18px;
     }
     
     @include mobile {
@@ -150,15 +145,11 @@
     color: $gray;
     
     @include laptop {
-
-    }
-    
-    @include tablet {
-      font-size: 12px;
+      font-size: 14px;
     }
     
     @include mobile {
-      font-size: 12px;
+      font-size: 8px;
     }
   }
 
@@ -166,18 +157,14 @@
     display: flex;
     justify-self: end;
     align-self: start;
-    gap: 25px;
+    gap: 37px;
 
     @include laptop {
+      gap: 20px;
+    }
 
-    }
-    
-    @include tablet {
-      font-size: 12px;
-    }
-    
     @include mobile {
-      gap: 10px;
+      gap: 6px;
     }
   }
 
@@ -197,15 +184,11 @@
     border-bottom: 2px solid transparent;
     
     @include laptop {
-
-    }
-    
-    @include tablet {
-      font-size: 12px;
+      font-size: 14px;
     }
     
     @include mobile {
-
+      font-size: 8px;
     }
 
       
@@ -224,18 +207,10 @@
   &__views-icon {
     width: 24px;
     height: 24px;
-
-    @include laptop {
-
-    }
-    
-    @include tablet {
-      width: 16px;
-      height: 16px;
-    }
     
     @include mobile {
-    
+      width: 13px;
+      height: 13px;
     }
   }
 }
