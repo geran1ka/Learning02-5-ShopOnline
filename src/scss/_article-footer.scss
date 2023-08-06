@@ -1,34 +1,10 @@
 .article-footer {
   grid-area: footer;
 
-  @include laptop {
-
-  }
-  
-  @include tablet {
-  
-  }
-  
-  @include mobile {
-  
-  }
-
   &__container {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
-    @include laptop {
-
-    }
-    
-    @include tablet {
-    
-    }
-    
-    @include mobile {
-    
-    }
   }
 
   &__navigation {

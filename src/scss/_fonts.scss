@@ -1,0 +1,19 @@
+@font-face {
+  @include font(Lato, regular)
+}
+
+@font-face {
+  @include font(Lato, bold)
+}
+
+@font-face {
+  @include font(Lato, 900)
+}
+
+@font-face {
+  @include font('Open-sans', regular)
+}
+
+@font-face {
+  @include font('Open-sans', 700)
+}

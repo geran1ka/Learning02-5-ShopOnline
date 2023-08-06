@@ -72,10 +72,6 @@
     transition: color .3s ease-in-out,
       transform .3s ease-in-out;
 
-    @include laptop {
-
-    }
-
     @include tablet {
       max-height: 33px;
       padding: 0;
@@ -109,9 +105,11 @@
     display: block;
     width: 17px;
     height: 8px;
-    background-image: url('../img/arrowDown.svg');
-    background-repeat: no-repeat;
-    background-position: center;
+    background: {
+      image: url('../img/arrowDown.svg');
+      repeat: no-repeat;
+      position: center;
+    }
     transition: transform .5s ease-in-out;
 
 
@@ -141,20 +139,16 @@
 	}
 
 	&__catalog-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: 'Lato', Arial, sans-serif;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 130%;
-    color: $white;
+    @extend %titleFooter;
 
     @include tablet {
       font-size: 26px;
     }
 
     @include mobile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-size: 20px;
     }
 	}
@@ -187,6 +181,11 @@
 
     @include mobile {
       font-size: 12px;
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 	}
 
@@ -224,20 +223,17 @@
 	}
 
 	&__info-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: 'Lato', Arial, sans-serif;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 130%;
-    color: $white;
+
+    @extend %titleFooter;
 
     @include tablet {
       font-size: 26px;
     }
 
     @include mobile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-size: 20px;
     }
 	}
@@ -270,6 +266,11 @@
 
     @include mobile {
       font-size: 12px;
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 	}
 
@@ -307,11 +308,7 @@
 	}
 
 	&__contacts-title {
-    font-family: 'Lato', Arial, sans-serif;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 130%;
-    color: $white;
+    @extend %titleFooter;
 
     @include tablet {
       font-size: 26px;
@@ -337,10 +334,9 @@
 	}
 
 	&__contacts-item {
+    @extend %titleFooter;
+
     font-size: 16px;
-    font-weight: 700;
-    line-height: 130%;
-    color: $white;
     font-style: normal;
 
     @include tablet {
@@ -368,14 +364,9 @@
 
 	&__copyright {
     grid-area: copyright;
+
+    @extend %titleFooter;
     font-size: 16px;
-    font-weight: 700;
-    line-height: 130%;
-    color: $white;
-
-    @include laptop {
-
-    }
 
     @include tablet {
       font-size: 12px;
@@ -391,10 +382,10 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    @extend %titleFooter;
     font-size: 16px;
-    font-weight: 700;
-    line-height: 130%;
-    color: $white;
+
 
     @include tablet {
       gap: 8px;
