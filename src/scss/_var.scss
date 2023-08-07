@@ -23,6 +23,26 @@ $mobile: 640px;
   color: $white;
 }
 
+%promoCardDiscount {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  font-size: 30px;
+  border-radius: 50%;
+  background-color: $orange;
+}
+
+%promoCardText {
+  font-family: Lato;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 130%;
+  color: $white;
+}
+
 // подключение шаблона
 // .selector {
 //   @extend %titleSecond

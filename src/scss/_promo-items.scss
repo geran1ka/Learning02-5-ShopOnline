@@ -5,12 +5,12 @@
   
   &__list {
     display: grid;
-    grid-template-columns: repeat(3, minmax(380px, 458px));
+    grid-template-columns: repeat(3, minmax(400px, 550px));
     grid-template-rows: repeat(2, 550px);
     gap: 60px;
 
     @include laptop {
-      grid-template-columns: repeat(2, minmax(400px, 550px));
+      grid-template-columns: repeat(2, minmax(380px, 458px));
       grid-template-rows: repeat(3, minmax(300px, 458px));
       gap: 24px;
     }
@@ -97,10 +97,7 @@
   .promo-card {
   
   &__link {
-    // max-width: 550px;
-    // max-height: 550px;
-    // width: 100%;
-    // height: 100%;
+
     border-radius: 20px;
 
     background: {
@@ -115,6 +112,73 @@
 
     &_two-rows {
       grid-row: span 2;
+    }
+
+    &_card-one {
+      display: flex;
+      align-items: end;
+      padding: 20px 9px;
+
+      p {
+        max-width: 190px;
+        @extend %promoCardText;
+
+        span {
+          font-weight: 700;
+          font-size: 32px;
+        }
+      }
+    }
+
+    &_card-two {
+      position: relative;
+      display: flex;
+      padding: 20px 9px;
+      background-size: 150%;
+
+
+      p {
+        @extend %promoCardText;
+
+        span {
+          bottom: 10px;
+          right: 10px;
+          @extend %promoCardDiscount;
+          
+        }
+      }
+    }
+
+    &_card-three {
+      position: relative;
+      span {
+        top: 10px;
+        left: 10px;
+        @extend %promoCardDiscount;
+      }
+    }
+
+    &_card-four {
+      position: relative;
+      display: flex;
+      align-items: end;
+      padding: 22px;
+
+      p {
+        padding: 29px 25px;
+        font-family: Lato;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 120%;
+        color: $white;
+        background-color: #38C0EB;
+        border-radius: 20px;
+
+        span {
+          font-size: 40px;
+          font-weight: 700;
+        }
+      }
 
     }
   }
