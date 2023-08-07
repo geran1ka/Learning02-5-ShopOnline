@@ -20,6 +20,7 @@ window.addEventListener('resize', () => {
       },
     });
   } else {
+
     $('.footer__catalog').accordion('destroy');
     $('.footer__info').accordion('destroy');
   }

@@ -24,6 +24,12 @@ export const paginationController = async (pagination, linkBack, linkNext, page,
       renderBlog(await getDataArticle(API_URL_POST, `?page=${page}`));
       window.location.assign(`${url}?page=${page}`);
     }
+
+    if (e.target.closest('.blog-pagination__item')) {
+      console.log(e.target.textContent);
+      renderBlog(await getDataArticle(API_URL_POST, `?page=${e.target.textContent}`));
+      window.location.assign(`${url}?page=${e.target.textContent}`);
+    }
   });
 
   if (page >= pages) {
