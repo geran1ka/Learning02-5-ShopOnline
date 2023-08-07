@@ -1,191 +1,88 @@
 .promo-cards {
-  padding-top: 30px;
-  padding-bottom: 50px;
-
-  @include laptop {
-    padding-top: 11px;
-  }
-
-  @include tablet {
-    padding-top: 29px;
-  }
-
-  @include mobile {
-    padding-top: 10px;
-    padding-bottom: 71px;
-  }
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(calc(100%/3 - 60px * 2), 1fr));
-    grid-template-rows: repeat(2, 516px);
-    justify-content: center;
-    row-gap: 60px;
-    column-gap: 60px;
-    grid-auto-flow: dense;
+    grid-template-columns: repeat(3, minmax(400px, 550px));
+    grid-template-rows: repeat(2, 550px);
+    gap: 60px;
 
     @include laptop {
-      grid-template-columns: minmax(464px, 1fr)  1fr;
-      grid-template-rows:   446px 410px 450px;
-      row-gap: 22px;
-      column-gap: 30px;
+      grid-template-columns: repeat(2, minmax(380px, 458px));
+      grid-template-rows: repeat(3, minmax(300px, 458px));
+      gap: 24px;
     }
-    
+
     @include tablet {
       grid-template-columns: 4fr 5fr;
-      grid-template-rows:   repeat(12, 48px) 360px;
-      row-gap: 0px;
-      column-gap: 20px;
+      grid-template-rows: repeat(8, 61px) 337px;
+      gap: 20px;
     }
-    
+
     @include mobile {
       grid-template-columns: 280px;
-      grid-template-rows:   268px 280px 254px 280px 123px;
-      row-gap: 20px;
-    }
-  }
+      grid-template-rows: repeat(4, 280px);
 
+      grid-auto-rows: 123px;
+      gap: 20px;
+    }
+
+  }
+  
   &__item {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 60px;
 
-    &_size_two-colums {
+    @include laptop {
+      gap: 24px;
+
+      &:nth-child(4) {
+        order: 1;
+      }
+    }
+
+    @include mobile {
+      gap: 20px;
+    }
+
+    &_two-colums {
       grid-column: span 2;
 
       @include mobile {
         grid-column: span 1;
+
       }
     }
-  }
 
-  &__item-box-one {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(150px, 1fr));
-    grid-template-rows: repeat(2, minmax(228px, 1fr));
-    column-gap: 60px;
-    row-gap: 4px;
+    &_symm-rows {
+      @include tablet {
+        grid-row: span 4;
+      }
+      @include mobile {
+        grid-row: span 1;
+      }
+    }
 
-    @include laptop {
-      grid-template-columns: repeat(2, minmax(156px, 1fr));
-      grid-template-rows: repeat(2, minmax(156px, 1fr));
-      column-gap: 60px;
-      row-gap: 22px;
+    &_asymm-rows-big {
+      @include tablet {
+        grid-row: span 5;
+      }
+      @include mobile {
+        grid-row: span 1;
+      }
     }
-    
-    @include tablet {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, minmax(126px, 1fr));
-      column-gap: 40px;
-      row-gap: 22px;
-      max-height: 278px;
-      grid-row: span 6;
-    }
-    
-    @include mobile {
-      max-height: 280px;
-      grid-template-columns: repeat(2, minmax(130px, 1fr));
-      grid-template-rows: repeat(2, minmax(118px, 1fr));
-      column-gap: 20px;
-      row-gap: 20px;
-      border-radius: 8px;
-      grid-row: span 1;
-    }
-  }
 
-  &__item-box-two {
+    &_asymm-rows-small {
+      @include tablet {
+        grid-row: span 3;
+      }
+      @include mobile {
+        grid-row: span 1;
+      }
+    }
 
-    @include tablet {
-      max-height: 380px;
-      grid-row: span 8;
-    }
-    
-    @include mobile {
-      grid-row: span 1;
-    }
-  }
-
-  &__item-box-three {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(150px, 1fr));
-    grid-template-rows: repeat(2, minmax(228px, 1fr));
-    column-gap: 60px;
-    row-gap: 26px;
-
-    @include laptop {
-      grid-template-columns: repeat(2, minmax(156px, 1fr));
-      grid-template-rows: repeat(2, minmax(156px, 1fr));
-      column-gap: 60px;
-      row-gap: 22px;
-    }
-    
-    @include tablet {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, minmax(126px, 1fr));
-      column-gap: 40px;
-      row-gap: 22px;
-      max-height: 274px;
-      grid-row: span 6;
-      align-self: flex-end;
-    }
-    
-    @include mobile {
-      max-height: 280px;
-      grid-template-columns: repeat(2, minmax(130px, 1fr));
-      grid-template-rows: repeat(2, minmax(118px, 1fr));
-      column-gap: 20px;
-      row-gap: 20px;
-      border-radius: 8px;
-      grid-row: span 1;
-    }
-  }
-
-  &__item-box-four {
-
-    @include laptop {
-      order: 5;
-    }
-  }
-
-  &__item-box-five {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(150px, 1fr));
-    grid-template-rows: repeat(2, minmax(228px, 1fr));
-    row-gap: 18px;
-    column-gap: 34px;
-
-    @include laptop {
-      grid-template-columns: repeat(2, minmax(156px, 1fr));
-      grid-template-rows: repeat(2, minmax(156px, 1fr));
-      column-gap: 60px;
-      row-gap: 22px;
-    }
-    
-    @include tablet {
-      grid-template-columns: 2fr 1fr;
-      grid-template-rows: repeat(2, minmax(83px, 1fr));
-      gap: 0;
-      grid-row: span 4;
-    }
-    
-    @include mobile {
-      max-height: 280px;
-      grid-template-columns: repeat(2, minmax(130px, 1fr));
-      grid-template-rows: repeat(2, minmax(118px, 1fr));
-      column-gap: 20px;
-      row-gap: 20px;
-      border-radius: 8px;
-      grid-row: span 1;
-    }
   }
 }
 
-@include laptop {
-
-}
-
-@include tablet {
-
-}
-
-@include mobile {
-
-}
+  

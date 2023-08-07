@@ -58,7 +58,6 @@ export const renderPagination = (data) => {
   paginationList.append(paginationItemThree);
 
   if (page < pages) {
-    console.log('page + 1');
     const paginationItemFour = createElem('li', {
       className: 'blog-pagination__item',
       textContent: page + 1,
@@ -66,9 +65,7 @@ export const renderPagination = (data) => {
     paginationList.append(paginationItemFour);
   }
 
-  console.log(page, pages);
   if (page < 2) {
-    console.log('page + 2');
     const paginationItemFive = createElem('li', {
       className: 'blog-pagination__item',
       textContent: page + 2,

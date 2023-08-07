@@ -1,0 +1,28 @@
+@mixin font($name, $weigth) {
+  font: {
+    famaly: $name;
+    weight: $weigth;
+    display: swap;
+  }
+  src: url("../fonts/#{ $name }-#{ $weigth }.woff2") format("woff2"),
+    url("../fonts/#{ $name }-#{ $weigth }.woff") format("woff");
+}
+
+@mixin laptop {
+  @media (max-width: #{$laptop}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+

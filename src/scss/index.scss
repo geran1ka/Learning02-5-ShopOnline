@@ -1,8 +1,7 @@
-// @import 'normalize'; 
+@import 'normalize'; 
 @import 'var';
+@import 'mixin';
 @import 'fonts';
-
-
 
 @import 'style';
 @import 'header';
@@ -10,9 +9,8 @@
 @import 'nav';
 @import 'hero';
 @import 'timer';
-// @import 'promo-cards';
-// @import 'promo-card';
-@import 'promo-items';
+@import 'promo-cards';
+@import 'promo-card';
 @import 'goods';
 @import 'footer';
 
