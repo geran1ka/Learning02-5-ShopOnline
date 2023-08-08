@@ -6,6 +6,7 @@ import gulpCssimport from 'gulp-cssimport';
 import {deleteAsync} from 'del';
 import htmlmin from 'gulp-htmlmin';
 import cleanCss from 'gulp-clean-css';
+import terser from 'gulp-terser';
 
 const prepros = true;
 
@@ -38,7 +39,7 @@ export const style = () => {
         .pipe(cleanCss({
           2: {
             specialComments: 0,
-          }
+          },
         }))
         .pipe(gulp.dest('./dist/css'))
         .pipe(browserSync.stream());
@@ -53,7 +54,7 @@ export const style = () => {
       .pipe(cleanCss({
         2: {
           specialComments: 0,
-        }
+        },
       }))
       .pipe(gulp.dest('./dist/css'))
       .pipe(browserSync.stream());
@@ -61,6 +62,7 @@ export const style = () => {
 
 export const js = () => gulp
     .src('./src/js/**/*.js')
+    .pipe(terser())
     .pipe(gulp.dest('./dist/js'))
     .pipe(browserSync.stream());
 
