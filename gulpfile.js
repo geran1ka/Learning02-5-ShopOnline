@@ -5,6 +5,7 @@ import gulpSass from 'gulp-sass';
 import gulpCssimport from 'gulp-cssimport';
 import {deleteAsync} from 'del';
 import htmlmin from 'gulp-htmlmin';
+import cleanCss from 'gulp-clean-css';
 
 const prepros = true;
 
@@ -34,14 +35,25 @@ export const style = () => {
     return gulp
         .src('./src/scss/**/*.scss')
         .pipe(sass().on('error', sass.logError))
+        .pipe(cleanCss({
+          2: {
+            specialComments: 0,
+          }
+        }))
         .pipe(gulp.dest('./dist/css'))
         .pipe(browserSync.stream());
   }
 
   return gulp
-      .src('./src/css/index.css') // когда файлов много то можно использовать **/*.css правильный путь (src/css/index.css)
+      // когда файлов много то можно использовать **/*.css правильный путь (src/css/index.css)
+      .src('./src/css/index.css')
       .pipe(gulpCssimport({
         extensios: ['css'],
+      }))
+      .pipe(cleanCss({
+        2: {
+          specialComments: 0,
+        }
       }))
       .pipe(gulp.dest('./dist/css'))
       .pipe(browserSync.stream());
