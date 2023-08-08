@@ -1,24 +1,24 @@
-@import 'normalize'; 
-@import 'var';
-@import 'mixin';
-@import 'fonts';
+@import 'components/var';
+@import 'components/mixin';
+@import 'components/fonts';
+@import 'components/normalize'; 
 
-@import 'style';
-@import 'header';
-@import 'form';
-@import 'nav';
-@import 'hero';
-@import 'timer';
-@import 'promo-cards';
-@import 'promo-card';
-@import 'goods';
-@import 'footer';
+@import 'components/style';
+@import 'components/header';
+@import 'components/form';
+@import 'components/nav';
+@import 'components/hero';
+@import 'components/timer';
+@import 'components/promo-cards';
+@import 'components/promo-card';
+@import 'components/goods';
+@import 'components/footer';
 
-@import 'blog';
-@import 'blog-item';
-@import 'blog-pagination';
+@import 'components/blog';
+@import 'components/blog-item';
+@import 'components/blog-pagination';
 
-@import 'article-header';
-@import 'article';
-@import 'article-footer';
-@import 'aside';
+@import 'components/article-header';
+@import 'components/article';
+@import 'components/article-footer';
+@import 'components/aside';

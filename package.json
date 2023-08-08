@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "gulp",
-    "build":  "gulp build",
+    "build": "gulp build",
     "clear": "gulp clear"
   },
   "author": "",
@@ -16,6 +16,7 @@
     "del": "^7.0.0",
     "gulp": "^4.0.2",
     "gulp-cssimport": "^7.0.0",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-sass": "^5.1.0",
     "sass": "^1.64.2"
   }

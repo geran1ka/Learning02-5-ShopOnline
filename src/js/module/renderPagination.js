@@ -1,4 +1,4 @@
-import {createElem} from '../createElem.js';
+import {createElem} from './function/createElem.js';
 
 export const renderPagination = (data) => {
   const pagination = createElem('footer', {

@@ -1,4 +1,4 @@
-import {createElem} from '../createElem.js';
+import {createElem} from './function/createElem.js';
 
 export const createAside = () => {
   const aside = createElem('aside', {

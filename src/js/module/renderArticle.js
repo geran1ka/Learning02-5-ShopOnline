@@ -1,4 +1,4 @@
-import {createElem} from '../createElem.js';
+import {createElem} from './function/createElem.js';
 import {API_URL_POST} from './const.js';
 import {createBreadCrumbs} from './createBreadCrumbs.js';
 import {createAside} from './createAside.js';
