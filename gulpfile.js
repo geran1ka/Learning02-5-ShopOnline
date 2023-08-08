@@ -6,11 +6,18 @@ import gulpCssimport from 'gulp-cssimport';
 import {deleteAsync} from 'del';
 import htmlmin from 'gulp-htmlmin';
 import cleanCss from 'gulp-clean-css';
-import terser from 'gulp-terser';
+// import terser from 'gulp-terser';
+// import concat from 'gulp-concat';
+import sourcemaps from 'gulp-sourcemaps';
 
 const prepros = true;
 
 const sass = gulpSass(sassPkg);
+
+// const allJS = [
+//   'src/js/jquery-3.7.0.min.js',
+//   'src/js/jquery-ui.min.js',
+// ]
 
 // задачи
 
@@ -35,12 +42,14 @@ export const style = () => {
   if (prepros) {
     return gulp
         .src('./src/scss/**/*.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(cleanCss({
           2: {
             specialComments: 0,
           },
         }))
+        .pipe(sourcemaps.write('../maps'))
         .pipe(gulp.dest('./dist/css'))
         .pipe(browserSync.stream());
   }
@@ -48,6 +57,7 @@ export const style = () => {
   return gulp
       // когда файлов много то можно использовать **/*.css правильный путь (src/css/index.css)
       .src('./src/css/index.css')
+      .pipe(sourcemaps.init())
       .pipe(gulpCssimport({
         extensios: ['css'],
       }))
@@ -56,13 +66,18 @@ export const style = () => {
           specialComments: 0,
         },
       }))
+      .pipe(sourcemaps.write('../maps'))
       .pipe(gulp.dest('./dist/css'))
       .pipe(browserSync.stream());
 };
 
 export const js = () => gulp
+    // .src([...allJS, './src/js/**/*.js'])
+    // .pipe(terser())
+    // .pipe(concat('index.min.js'))
     .src('./src/js/**/*.js')
-    .pipe(terser())
+    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.write('../maps'))
     .pipe(gulp.dest('./dist/js'))
     .pipe(browserSync.stream());
 
@@ -70,7 +85,7 @@ export const copy = () => gulp
     .src([
       './src/fonts/**/*',
       './src/img/**/*', // 'src/assets/**/*.{png, jpg, jpeg, svg}
-      './src/libs/**/*',
+      // './src/libs/**/*',
     ], {
       base: 'src',
     })
@@ -96,7 +111,7 @@ export const server = () => {
   gulp.watch([
     './src/img/**/*',
     './src/fonts/**/*',
-    './src/libs/**/*',
+    // './src/libs/**/*',
 
   ], copy);
 };
