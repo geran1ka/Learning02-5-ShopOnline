@@ -6,18 +6,18 @@ import gulpCssimport from 'gulp-cssimport';
 import {deleteAsync} from 'del';
 import htmlmin from 'gulp-htmlmin';
 import cleanCss from 'gulp-clean-css';
-// import terser from 'gulp-terser';
-// import concat from 'gulp-concat';
+import terser from 'gulp-terser';
+import concat from 'gulp-concat';
 import sourcemaps from 'gulp-sourcemaps';
 
 const prepros = true;
 
 const sass = gulpSass(sassPkg);
 
-// const allJS = [
-//   'src/js/jquery-3.7.0.min.js',
-//   'src/js/jquery-ui.min.js',
-// ]
+const allJS = [
+  'src/libs/jquery-3.7.0.min.js',
+  'src/libs/jquery-ui.min.js',
+];
 
 // задачи
 
@@ -72,10 +72,9 @@ export const style = () => {
 };
 
 export const js = () => gulp
-    // .src([...allJS, './src/js/**/*.js'])
-    // .pipe(terser())
-    // .pipe(concat('index.min.js'))
-    .src('./src/js/**/*.js')
+    .src([...allJS, './src/js/index.js'])
+    .pipe(terser())
+    .pipe(concat('index.min.js'))
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write('../maps'))
     .pipe(gulp.dest('./dist/js'))
@@ -85,7 +84,6 @@ export const copy = () => gulp
     .src([
       './src/fonts/**/*',
       './src/img/**/*', // 'src/assets/**/*.{png, jpg, jpeg, svg}
-      './src/libs/**/*',
     ], {
       base: 'src',
     })
@@ -111,8 +109,6 @@ export const server = () => {
   gulp.watch([
     './src/img/**/*',
     './src/fonts/**/*',
-    './src/libs/**/*',
-
   ], copy);
 };
 

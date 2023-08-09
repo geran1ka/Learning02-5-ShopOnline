@@ -1,6 +1,6 @@
 import {timerRender} from './timerRender.js';
-import {declOfNum} from './function/decl0fNum.js';
-import {getTwoDigits} from './function/getTwoDigits.js';
+import {declOfNum} from './decl0fNum.js';
+import {getTwoDigits} from './getTwoDigits.js';
 
 export const timerControl = (timer, deadline) => {
   const timerElem = timerRender(timer);

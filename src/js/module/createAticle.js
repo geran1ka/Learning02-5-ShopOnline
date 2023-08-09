@@ -1,4 +1,4 @@
-import {createElem} from './function/createElem.js';
+import {createElem} from './createElem.js';
 
 export const createArticle = async (data) => {
   const userId = data.data.user_id;

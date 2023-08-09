@@ -4,8 +4,6 @@
 // import {renderArticle} from './module/renderArticle.js';
 // import {timerInit} from './module/timer/timerInit.js';
 
-import {controllAccordeon} from './script.js';
-
 // const init = async () => {
 //   timerInit();
 //   const pageBlog = document.querySelector('.blog-page');
@@ -22,5 +20,43 @@ import {controllAccordeon} from './script.js';
 // };
 
 // init();
+
+const accordionInit = (elem) => {
+  elem.accordion({
+    active: true,
+    collapsible: true,
+    heightStyle: 'content',
+    icons: {
+      header: 'footer__accord-icon',
+      activeHeader: 'footer__accord-icon footer__accord-icon_active',
+    },
+  });
+};
+
+export const controllAccordeon = () => {
+  const catalog = $('.footer__catalog');
+  const info = $('.footer__info');
+  let accFlag = false;
+  if (window.innerWidth <= 640) {
+    accordionInit(catalog);
+    accordionInit(info);
+    accFlag = true;
+  }
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth <= 640) {
+      accordionInit(catalog);
+      accordionInit(info);
+
+      accFlag = true;
+    } else {
+      if (accFlag) {
+        catalog.accordion('destroy');
+        info.accordion('destroy');
+        accFlag = false;
+      }
+    }
+  });
+};
 
 controllAccordeon();

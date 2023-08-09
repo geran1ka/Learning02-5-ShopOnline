@@ -1,4 +1,4 @@
-import {createElem} from './function/createElem.js';
+import {createElem} from './createElem.js';
 import {createBreadCrumbs} from './createBreadCrumbs.js';
 import {paginationController} from './paginationControl.js';
 import {renderPagination} from './renderPagination.js';
