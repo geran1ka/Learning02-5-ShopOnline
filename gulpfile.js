@@ -85,7 +85,7 @@ export const copy = () => gulp
     .src([
       './src/fonts/**/*',
       './src/img/**/*', // 'src/assets/**/*.{png, jpg, jpeg, svg}
-      // './src/libs/**/*',
+      './src/libs/**/*',
     ], {
       base: 'src',
     })
@@ -111,7 +111,7 @@ export const server = () => {
   gulp.watch([
     './src/img/**/*',
     './src/fonts/**/*',
-    // './src/libs/**/*',
+    './src/libs/**/*',
 
   ], copy);
 };

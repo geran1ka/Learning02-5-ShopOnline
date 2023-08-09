@@ -1,3 +1,10 @@
+import $ from './jquery.js';
+import accordion from './jquery-ui.js';
+
+const catalogG = $('.footer__catalog');
+console.log('catalogG: ', catalogG);
+
+
 const accordionInit = (elem) => {
   elem.accordion({
     active: true,
@@ -10,7 +17,7 @@ const accordionInit = (elem) => {
   });
 };
 
-const controllAccordeon = () => {
+export const controllAccordeon = () => {
   const catalog = $('.footer__catalog');
   const info = $('.footer__info');
   let accFlag = false;
@@ -36,5 +43,5 @@ const controllAccordeon = () => {
   });
 };
 
-controllAccordeon();
+// controllAccordeon();
 
