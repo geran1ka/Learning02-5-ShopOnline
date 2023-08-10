@@ -40,6 +40,24 @@
         position: center;
       };
 
+      // background-image: url('../../img/block-1.jpg');
+      // background-image: image-set(
+      //   url('../../img/block-1.avif') 2x,
+      //   url('../../img/block-1.avif') 1x,
+      //   url('../../img/block-1.webp') 2x,
+      //   url('../../img/block-1.webp') 1x,
+      //   url('../../img/block-1.jpg') 2x,
+      //   url('../../img/block-1.jpg') 1x,
+      // );
+      // background-image: -webkit-image-set(
+      //   url('../../img/block-1.avif') 2x,
+      //   url('../../img/block-1.avif') 1x,
+      //   url('../../img/block-1.webp') 2x,
+      //   url('../../img/block-1.webp') 1x,
+      //   url('../../img/block-1.jpg') 2x,
+      //   url('../../img/block-1.jpg') 1x,
+      // );
+
       @include laptop {
         padding: 20px 12px 20px 9px;
       }
