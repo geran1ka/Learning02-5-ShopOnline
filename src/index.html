@@ -9,10 +9,20 @@
   <link rel="preload" href="fonts/lato-bold.woff2" as="font" type="font/woff2" crossorigin>
   <!-- <link rel="preload" href="fonts/lato-v23-latin-900.woff2" as="font" type="font/woff2" crossorigin> -->
 
-  <link rel="stylesheet" href="css/index.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const createLink = url => {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = url;
+        document.head.append(link);
+      };
+      createLink('css/index.css');
+    })
+  </script>
 
   <script type="module" src="js/index.min.js"></script>
-  <!-- <script defer src="js/jquery-3.7.0.min.js"></script>
+  <!-- <script defer src="js/jquery-3.7.0.min.js"></scrip>
   <script defer src="js/jquery-ui.min.js"></script>
   <script defer src="js/script.js"></script> -->
   
@@ -171,7 +181,7 @@
                   <source media="(max-width: 460px)" srcset="./img/goods/photoOne-mob.jpg" type="image/jpg"> -->
                   <source srcset="./img/goods/photoOne.avif" type="image/avif">
                   <source srcset="./img/goods/photoOne.webp" type="image/webp">
-                  <img src="./img/goods/photoOne.jpg" alt="Пара футболок" class="item__img">
+                  <img loading="lazy" src="./img/goods/photoOne.jpg" alt="Пара футболок" class="item__img" width="420px" height="295px">
                 </picture>
                 <span class="item__discount">-50%</span>
               </a>
@@ -188,7 +198,7 @@
                 <picture>
                   <source srcset="./img/goods/photoTwo.avif" type="image/avif">
                   <source srcset="./img/goods/photoTwo.webp" type="image/webp">
-                  <img src="./img/goods/photoTwo.jpg" alt="Кроссовки" class="item__img">
+                  <img loading="lazy" src="./img/goods/photoTwo.jpg" alt="Кроссовки" class="item__img" width="420px" height="295px">
                 </picture>
                 <span class="item__discount">-50%</span>
               </a>
@@ -205,7 +215,7 @@
                 <picture>
                   <source srcset="./img/goods/photoThree.avif" type="image/avif">
                   <source srcset="./img/goods/photoThree.webp" type="image/webp">
-                  <img src="./img/goods/photoThree.jpg" alt="Постельное белье" class="item__img">
+                  <img loading="lazy" src="./img/goods/photoThree.jpg" alt="Постельное белье" class="item__img" width="420px" height="295px">
                 </picture>
                 <span class="item__discount">-50%</span>
               </a>
@@ -222,7 +232,7 @@
                 <picture>
                   <source srcset="./img/goods/photoFour.avif" type="image/avif">
                   <source srcset="./img/goods/photoFour.webp" type="image/webp">
-                  <img src="./img/goods/photoFour.jpg" alt="Фен" class="item__img">
+                  <img loading="lazy" src="./img/goods/photoFour.jpg" alt="Фен" class="item__img" width="420px" height="295px">
                 </picture>
                 <span class="item__discount">-50%</span>
               </a>
@@ -239,7 +249,7 @@
                 <picture>
                   <source srcset="./img/goods/photoFive.avif" type="image/avif">
                   <source srcset="./img/goods/photoFive.webp" type="image/webp">
-                  <img src="./img/goods/photoFive.jpg" alt="Постельное белье" class="item__img">
+                  <img loading="lazy" src="./img/goods/photoFive.jpg" alt="Постельное белье" class="item__img" width="420px" height="295px">
                 </picture>
                 <span class="item__discount">-50%</span>
               </a>
@@ -256,7 +266,7 @@
                 <picture>
                   <source srcset="./img/goods/photoSix.avif" type="image/avif">
                   <source srcset="./img/goods/photoSix.webp" type="image/webp">
-                  <img src="./img/goods/photoSix.jpg" alt="Фен" class="item__img">
+                  <img loading="lazy" src="./img/goods/photoSix.jpg" alt="Фен" class="item__img">
                 </picture>
                 <span class="item__discount">-50%</span>
               </a>
@@ -273,7 +283,7 @@
                 <picture>
                   <source srcset="./img/goods/photoSeven.avif" type="image/avif">
                   <source srcset="./img/goods/photoSeven.webp" type="image/webp">
-                  <img src="./img/goods/photoSeven.jpg" alt="Варежки-мишки" class="item__img">
+                  <img loading="lazy" src="./img/goods/photoSeven.jpg" alt="Варежки-мишки" class="item__img" width="420px" height="295px">
                 </picture>
                 <span class="item__discount">-50%</span>
               </a>
@@ -290,7 +300,7 @@
                 <picture>
                   <source srcset="./img/goods/photoOne.avif" type="image/avif">
                   <source srcset="./img/goods/photoOne.webp" type="image/webp">
-                  <img src="./img/goods/photoOne.jpg" alt="Пара футболок" class="item__img">
+                  <img loading="lazy" src="./img/goods/photoOne.jpg" alt="Пара футболок" class="item__img" width="420px" height="295px">
                 </picture>
                 <span class="item__discount">-50%</span>
               </a>
