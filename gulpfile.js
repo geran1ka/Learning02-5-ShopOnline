@@ -14,6 +14,8 @@ import gulpWebp from 'gulp-webp';
 import gulpAvif from 'gulp-avif';
 import {stream as critical} from 'critical';
 import gulpif from 'gulp-if';
+import webpackStream from 'webpack-stream';
+import webpack from 'webpack';
 
 const prepros = true;
 
@@ -69,12 +71,37 @@ export const style = () => {
       .pipe(browserSync.stream());
 };
 
+const webpackConf = {
+  mode: dev ? 'development' : 'production',
+  devtool: dev ? 'eval-source-map' : false,
+  optimization: {
+    minimize: false,
+  },
+  output: {
+    filename: 'index.js',
+  },
+  module: {
+    rules: [],
+  },
+  plugins: [
+    new webpack.ProvidePlugin({'$': 'jquery', 'jQuery': 'jquery', 'window.jQuery': 'jquery'}), // jQuery (npm i jquery)
+  ],
+};
+
+if (!dev) {
+  webpackConf.module.rules.push({
+    test: /\.(js)$/,
+    exclude: /(node_modules)/,
+    loader: 'babel-loader',
+  });
+}
+
 export const js = () => gulp
-    .src([...allJS, './src/js/index.js'])
-    .pipe(terser())
+    .src('./src/js/index.js')
+    .pipe(webpackStream(webpackConf, webpack))
+    // .pipe(gulpif(!dev, gulp.dest('./dist/js')))
+    .pipe(gulpif(!dev, terser()))
     .pipe(concat('index.min.js'))
-    .pipe(gulpif(dev, sourcemaps.init()))
-    .pipe(gulpif(dev, sourcemaps.write('../maps')))
     .pipe(gulp.dest('./dist/js'))
     .pipe(browserSync.stream());
 

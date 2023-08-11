@@ -12,15 +12,23 @@
   padding-bottom: 10px;
 }
   
-  &__container {
-  }
-  
   &__content {
     height: 480px;
     padding: 40px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/banner-one.jpeg) no-repeat center;
-    background-size: 109% 278%;
-    background-position-x: 0px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    background-image: url(../img/banner-one.jpeg);
+    background-image: image-set(
+      url('../img/banner-one.avif'),
+      url('../img/banner-one.webp'),
+      url('../img/banner-one.jpg')
+    );
+    background-image: -webkit-image-set(
+      url('../img/banner-one.avif'),
+      url('../img/banner-one.webp'),
+      url('../img/banner-one.jpg')
+    );
+    background-size: cover;
+    background-position: center;
     border-radius: 20px;
 
     @include laptop {
