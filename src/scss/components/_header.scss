@@ -83,10 +83,13 @@
   
   &__btn-menu {
     position: relative;
+    display: flex;
+    align-items: center;
     justify-self: center;
+    gap: 7px;
     grid-area: menu;
     max-width: 151px;
-    padding: 10px 32px 11px 58px;
+    padding: 15px 28px 15px 30px;
     font-size: 22px;
     line-height: 150%; 
     color: $white;
@@ -96,45 +99,49 @@
 
     transition: background-color .3s ease-in-out;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 30px;
-      width: 24px;
-      height: 24px;
-      background-image: url('../img/sort.svg');
-      background-repeat: no-repeat;
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   top: 50%;
+    //   transform: translateY(-50%);
+    //   left: 30px;
+    //   width: 24px;
+    //   height: 24px;
+    //   background-image: url('../img/sort.svg');
+    //   background-repeat: no-repeat;
 
-      @include tablet {
-        left: 21px;
-      }
+    //   @include tablet {
+    //     left: 21px;
+    //   }
     
-      @include mobile {
-        left: 14px;
-        height: 16px;
-        width: 16px;
-        background-size: contain;
-      }
+    //   @include mobile {
+    //     left: 14px;
+    //     height: 16px;
+    //     width: 16px;
+    //     background-size: contain;
+    //   }
+    // }
+    span {
+      pointer-events: none;
     }
 
     @include laptop {
       justify-self: unset;
-      padding-left: 60px;
     }
   
     @include tablet {
+      gap: 4px;
       max-width: 115px;
-      padding: 8px 22px 10px 49px;
+      padding: 8px 21px 10px;
       font-size: 16px;
       border-radius: 6px;
     }
   
     @include mobile {
       max-width: 79px;
+      gap: 2px;
       align-self: flex-start;
-      padding: 7px 14px 7px 31px;
+      padding: 5px 15px 7px;
       font-size: 12px;
       border-radius: 4px;
     }
@@ -151,10 +158,11 @@
   &__menu {
     position: absolute;
     top: 100px;
-    transform: translateY(-200%);
+    // transform: translateY(-200%);
     left: 0;
     right: 0;
     display: grid;
+    display: none;
     grid-template-columns: minmax(533px, 4fr) minmax(307px, 3fr) minmax(307px, 3fr);
     grid-template-rows: minmax(min-content, 1fr) min-content;
     grid-template-areas: 
@@ -164,9 +172,10 @@
     padding: 52px 75px 92px;
     color: $black;
     background-color: $white;
+    overflow-y: auto;
 
     @include laptop {
-      top: 150px;
+      top: 155px;
       grid-template-columns: repeat(3, 1fr);
       column-gap: 45px;
       padding: 42px;
