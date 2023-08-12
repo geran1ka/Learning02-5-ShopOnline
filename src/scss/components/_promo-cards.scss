@@ -4,7 +4,8 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(400px, 550px));
     grid-template-rows: repeat(2, 550px);
-    gap: 60px;
+    justify-content: space-between;
+    gap: 45px;
 
     @include laptop {
       grid-template-columns: repeat(2, minmax(380px, 458px));

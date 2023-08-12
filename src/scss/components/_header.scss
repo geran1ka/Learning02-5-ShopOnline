@@ -18,9 +18,10 @@
   }
 
   &__container {
+    position: relative;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 190px 151px 1fr 354px;
+    grid-template-columns: 190px 151px minmax(min-content, 757px) 354px;
     grid-template-rows: min-content;
     column-gap: 10px;
     justify-content: space-between;
@@ -58,6 +59,7 @@
   &__logo {
     grid-area: logo;
     padding: 13px 0 7px;
+    margin-right: 20px;
     color: $black;
 
     @include laptop {
@@ -145,6 +147,49 @@
       background-color: $blue-hover;
     }
   }
+
+  &__menu {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: minmax(533px, 4fr) minmax(307px, 3fr) minmax(307px, 3fr);
+    grid-template-rows: minmax(min-content, 1fr) min-content;
+    grid-template-areas: 
+      'catalog info contacts';
+    column-gap: 30px;
+    z-index: 10;
+    padding: 52px 75px 92px;
+    color: $black;
+    background-color: $white;
+
+    @include laptop {
+      top: 150px;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 45px;
+      padding: 42px;
+    }
+
+    @include tablet {
+      top: 115px;
+      column-gap: 15px;
+      padding: 34;
+    }
+
+    @include mobile {
+      top: 125px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, minmax(34px, min-content));
+      grid-template-areas: 
+      'catalog catalog'
+      'info info'
+      'contacts contacts';
+      row-gap: 20px;
+      column-gap: 20px;
+      padding: 20px;
+    }
+  }
   
   &__form {
     grid-area: search;
@@ -216,16 +261,3 @@
     }
   }
 }
-
-
-// @include laptop {
-
-// }
-
-// @include tablet {
-
-// }
-
-// @include mobile {
-
-// }

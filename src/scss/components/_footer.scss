@@ -123,7 +123,7 @@
     grid-area: catalog;
     display: flex;
     flex-direction: column;
-    row-gap: 40px;
+    row-gap: 40px; // footer
 
     @include laptop {
       row-gap: 30px;
@@ -157,7 +157,7 @@
     display: flex;
     flex-wrap: wrap;
     row-gap: 15px;
-    column-gap: 30px;
+    column-gap: 30px; // footer
 
     @include tablet {
       row-gap: 10px;
@@ -223,7 +223,6 @@
 	}
 
 	&__info-title {
-
     @extend %titleFooter;
 
     @include tablet {
@@ -288,7 +287,7 @@
     }
 	}
 
-	&__contacts {
+	&__contacts { //footer
     grid-area: contacts;
     display: flex;
     flex-direction: column;
@@ -322,14 +321,14 @@
 	&__contact-list {
     display: flex;
     flex-direction: column;
-    row-gap: 21px;
+    row-gap: 21px; 
 
     @include tablet {
-      row-gap: 13px;
+      row-gap: 13px; 
     }
 
     @include mobile {
-      row-gap: 10px;
+      row-gap: 10px; 
     }
 	}
 
@@ -337,7 +336,7 @@
     @extend %titleFooter;
 
     font-size: 16px;
-    font-style: normal;
+
 
     @include tablet {
       font-size: 12px;
