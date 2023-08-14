@@ -9,6 +9,10 @@
     "build": "gulp build",
     "clear": "gulp clear"
   },
+  "browserslist": [
+    "cover 99%",
+    "not IE 11"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -19,7 +23,9 @@
     "critical": "^5.1.1",
     "del": "^7.0.0",
     "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
     "gulp-avif": "^1.1.1",
+    "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-cssimport": "^7.0.0",

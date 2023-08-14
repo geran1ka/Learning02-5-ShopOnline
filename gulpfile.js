@@ -16,6 +16,8 @@ import {stream as critical} from 'critical';
 import gulpif from 'gulp-if';
 import webpackStream from 'webpack-stream';
 import webpack from 'webpack';
+import autoprefixer from 'gulp-autoprefixer';
+import babel from 'gulp-babel';
 
 const prepros = true;
 
@@ -45,6 +47,7 @@ export const style = () => {
         .src('./src/scss/**/*.scss')
         .pipe(gulpif(dev, sourcemaps.init()))
         .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer())
         .pipe(cleanCss({
           2: {
             specialComments: 0,
@@ -61,6 +64,7 @@ export const style = () => {
       .pipe(gulpCssimport({
         extensios: ['css'],
       }))
+      .pipe(autoprefixer())
       .pipe(cleanCss({
         2: {
           specialComments: 0,
@@ -98,6 +102,10 @@ if (!dev) {
 
 export const js = () => gulp
     .src('./src/js/index.js')
+    .pipe(babel({
+      presets: ['@babel/preset-env'],
+      ignore: ['./src/js/**/*.min.js'],
+    }))
     .pipe(webpackStream(webpackConf, webpack))
     // .pipe(gulpif(!dev, gulp.dest('./dist/js')))
     .pipe(gulpif(!dev, terser()))
@@ -191,4 +199,3 @@ export const base = gulp.parallel(html, style, js, img, avif, webp, copy);
 export const build = gulp.series(clear, base, critCSS);
 
 export default gulp.series(develop, base, server);
-
