@@ -1,0 +1,176 @@
+.card {
+  padding-top: 40px;
+  padding-bottom: 50px;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    grid-template-rows: min-content min-content min-content;
+    grid-template-areas: 
+      'title .'
+      'img book'
+      'description .';
+    gap: 69px;
+  }
+  
+  &__title {
+    grid-area: title;
+  }
+  
+  &__content {
+  }
+  
+  &__img-wrapper {
+    position: relative;
+    grid-area: img;
+    max-width: 757px;
+
+    p {
+      @extend %promoCardDiscount;
+
+      top: 20px;
+      right: 50px;
+    }
+
+  }
+  
+  &__img {
+    margin-bottom: 11px;
+  }
+  
+  &__book {
+    grid-area: book;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px;
+    max-width: 420px;
+    background-color: $white;
+    box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    align-self: self-start;
+  }
+  
+  &__price {
+    display: flex;
+    gap: 24px;
+  }
+  
+  &__price-new {
+    margin-bottom: 7px;
+    color: $red;
+    font-family: Lato;
+    font-size: 36px;
+    font-weight: 700;
+  }
+  
+  &__price-old {
+    color: $black;
+    font-family: Lato;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: line-through;
+  }
+  
+  &__price-credit {
+    color: $blue;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+  }
+  
+  &__btn-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+  }
+  
+  &__btn-cart {
+    padding: 17px 42px;
+    color: $white;
+    background-color: $blue;
+
+    border-radius: 10px;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; 
+    border: none;
+  }
+  
+  &__btn-favorite {
+    width: 33px;
+    height: 33px;
+    background-color: transparent;
+    color: $blue;
+    border: none;
+
+  }
+  
+  &__svg-favorite {
+  }
+
+  &__wrapper-delivery-salesman {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  &__delivery {
+
+  }
+  
+  &__delivery-date {
+  }
+  
+  &__salesman {
+  }
+  
+  &__salesman-name {
+  }
+
+  &__discount-btn {
+    color: $blue;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; 
+  }
+
+  &__discount-svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  &__description {
+    grid-area: description;
+    max-width: 1234px;
+  }
+  
+  &__description-title {
+    margin-bottom: 20px;
+    @extend %titleFooter;
+  }
+  
+  &__description-text {
+    font-family: Lato;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $black;
+  }
+}
+  .container {
+  }
+  .card-discount-info {
+  }
+  

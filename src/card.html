@@ -24,7 +24,9 @@
             </svg>
         </a>
   
-        <button class="header__btn-menu" type="button" aria-label="Открыть меню">Меню</button>
+        <div class="header__btn-icon icon">
+          <span class="icon__line"></span>
+        </div>
   
         <navigation class="header__menu menu">
           <div class="menu__catalog">
@@ -147,18 +149,19 @@
         <div class="container card__container">
           <h2 class="card__title">15.6" Игровой ноутбук ASUS G513IE-HN004T</h2>
 
-          <div class="card__content">
+          <!-- <div class="card__content"> -->
             <div class="card__img-wrapper">
               <picture>
                 <source srcset="./img/card/cardNout.avif" type="image/avif">
                 <source src="./img/card/cardNout.wepb" type="image/webp">
-                <img class="card__img" src="./img/card/cardNout.jpg" alt="'15.6' Игровой ноутбук ASUS G513IE-HN004T">
+                <img class="card__img" src="./img/card/cardNout.jpg" alt="'15.6' Игровой ноутбук ASUS G513IE-HN004T" width="757px" height="427px">
               </picture>
+              <p>-15%</p>
             </div>
 
             <div class="card__book">
-              <div class="card__price">
-                <p class="card__price-new">109 090 ₽ <span class="card__price-old">140 590 ₽</span></p>
+              <div class="card__price-wrapper">
+                <p class="card__price"><span class="card__price-new">109 090 ₽</span><span class="card__price-old">140 590 ₽</span></p>
                 <p class="card__price-credit">В кредит от 5600 ₽</p>
               </div>
               <div class="card__btn-wrapper">
@@ -173,19 +176,17 @@
                 </button>
               </div>
 
-              <div class="">
-                <p class="card__delivery">Доставка<span class="card__delivery-date">1-3 января</span></p>
-                <p class="card__salesman">Продавец<span class="card__salesman-name">ShopOnline</span></p>
+              <div class="card__wrapper-delivery-salesman">
+                <p class="card__delivery">Доставка <span class="card__delivery-date">1-3 января</span></p>
+                <p class="card__salesman">Продавец <span class="card__salesman-name">ShopOnline</span></p>
               </div>
 
-              <div class="card-discount-info">
                 <button class="card__discount-btn">
-                  <svg class="card__discount-btn" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg class="card__discount-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19 13.586V10C19 6.783 16.815 4.073 13.855 3.258C13.562 2.52 12.846 2 12 2C11.154 2 10.438 2.52 10.145 3.258C7.185 4.074 5 6.783 5 10V13.586L3.293 15.293C3.19996 15.3857 3.12617 15.4959 3.07589 15.6172C3.0256 15.7386 2.99981 15.8687 3 16V18C3 18.2652 3.10536 18.5196 3.29289 18.7071C3.48043 18.8946 3.73478 19 4 19H20C20.2652 19 20.5196 18.8946 20.7071 18.7071C20.8946 18.5196 21 18.2652 21 18V16C21.0002 15.8687 20.9744 15.7386 20.9241 15.6172C20.8738 15.4959 20.8 15.3857 20.707 15.293L19 13.586ZM19 17H5V16.414L6.707 14.707C6.80004 14.6143 6.87383 14.5041 6.92412 14.3828C6.9744 14.2614 7.00019 14.1313 7 14V10C7 7.243 9.243 5 12 5C14.757 5 17 7.243 17 10V14C17 14.266 17.105 14.52 17.293 14.707L19 16.414V17ZM12 22C12.6193 22.0008 13.2235 21.8086 13.7285 21.4502C14.2335 21.0917 14.6143 20.5849 14.818 20H9.182C9.38566 20.5849 9.76648 21.0917 10.2715 21.4502C10.7765 21.8086 11.3807 22.0008 12 22Z" fill="#3670C7"/>
                   </svg>
                   <span>Узнать о снижении цены</span>
                 </button>
-              </div>
             </div>
 
             <div class="card__description">
@@ -196,9 +197,159 @@
               </p>
             </div>
 
-          </div>
+          <!-- </div> -->
         </div>
       </section>
+
+            <!-- <section class="goods">
+        <div class="goods__container container">
+          <h2 class="goods__title">Это выгодно!</h2>
+          <ul class="goods__list">
+            <li class="goods__item item">
+              <h3 class="item__title">Пара футболок</h3>
+              <a href="#" class="item__img-wrapper">
+                <picture> -->
+                  <!-- <source media="(max-width: 460px)" srcset="./img/goods/photoOne-mob.avif" type="image/avif">
+                  <source media="(max-width: 460px)" srcset="./img/goods/photoOne-mob.webp" type="image/webp">
+                  <source media="(max-width: 460px)" srcset="./img/goods/photoOne-mob.jpg" type="image/jpg"> -->
+                  <!-- для ретина дисплеев подключаем картинку в 2раза больше
+                  <source srcset="./img/goods/photoOne.avif, ./img/goods/photoOne@2x.avif 2x" type="image/avif">
+                  <source srcset="./img/goods/photoOne.webp, ./img/goods/photoOne@2x.webp 2x" type="image/webp">
+                  <img loading="lazy" src="./img/goods/photoOne.jpg" srcset="./img/goods/photoOne@2x.jpg 2x" alt="Пара футболок" class="item__img" width="420px" height="295px"> -->
+                  <!-- <source srcset="./img/goods/photoOne.avif" type="image/avif">
+                  <source srcset="./img/goods/photoOne.webp" type="image/webp">
+                  <img loading="lazy" src="./img/goods/photoOne.jpg" alt="Пара футболок" class="item__img" width="420px" height="295px">
+                </picture>
+                <span class="item__discount">-50%</span>
+              </a>
+  
+              <div class="item__price-wrapper">
+                <p class="item__price">1299 ₽</p>
+                <p class="item__price-discount">2598 ₽</p>
+              </div>
+            </li>
+  
+            <li class="goods__item item">
+              <h3 class="item__title">Кроссовки</h3>
+              <a href="#" class="item__img-wrapper">
+                <picture>
+                  <source srcset="./img/goods/photoTwo.avif" type="image/avif">
+                  <source srcset="./img/goods/photoTwo.webp" type="image/webp">
+                  <img loading="lazy" src="./img/goods/photoTwo.jpg" alt="Кроссовки" class="item__img" width="420px" height="295px">
+                </picture>
+                <span class="item__discount">-50%</span>
+              </a>
+  
+              <div class="item__price-wrapper">
+                <p class="item__price">2099 ₽</p>
+                <p class="item__price-discount">5938 ₽</p>
+              </div>
+            </li>
+  
+            <li class="goods__item item">
+              <h3 class="item__title">Постельное белье</h3>
+              <a href="#" class="item__img-wrapper">
+                <picture>
+                  <source srcset="./img/goods/photoThree.avif" type="image/avif">
+                  <source srcset="./img/goods/photoThree.webp" type="image/webp">
+                  <img loading="lazy" src="./img/goods/photoThree.jpg" alt="Постельное белье" class="item__img" width="420px" height="295px">
+                </picture>
+                <span class="item__discount">-50%</span>
+              </a>
+  
+              <div class="item__price-wrapper">
+                <p class="item__price">3902 ₽</p>
+                <p class="item__price-discount">4490 ₽</p>
+              </div>
+            </li>
+  
+            <li class="goods__item item">
+              <h3 class="item__title">Фен</h3>
+              <a href="#" class="item__img-wrapper">
+                <picture>
+                  <source srcset="./img/goods/photoFour.avif" type="image/avif">
+                  <source srcset="./img/goods/photoFour.webp" type="image/webp">
+                  <img loading="lazy" src="./img/goods/photoFour.jpg" alt="Фен" class="item__img" width="420px" height="295px">
+                </picture>
+                <span class="item__discount">-50%</span>
+              </a>
+  
+              <div class="item__price-wrapper">
+                <p class="item__price">2999 ₽</p>
+                <p class="item__price-discount">6030 ₽</p>
+              </div>
+            </li>
+  
+            <li class="goods__item item">
+              <h3 class="item__title">Постельное белье</h3>
+              <a href="#" class="item__img-wrapper">
+                <picture>
+                  <source srcset="./img/goods/photoFive.avif" type="image/avif">
+                  <source srcset="./img/goods/photoFive.webp" type="image/webp">
+                  <img loading="lazy" src="./img/goods/photoFive.jpg" alt="Постельное белье" class="item__img" width="420px" height="295px">
+                </picture>
+                <span class="item__discount">-50%</span>
+              </a>
+  
+              <div class="item__price-wrapper">
+                <p class="item__price">3902 ₽</p>
+                <p class="item__price-discount">4490 ₽</p>
+              </div>
+            </li>
+  
+            <li class="goods__item item">
+              <h3 class="item__title">Фен</h3>
+              <a href="#" class="item__img-wrapper">
+                <picture>
+                  <source srcset="./img/goods/photoSix.avif" type="image/avif">
+                  <source srcset="./img/goods/photoSix.webp" type="image/webp">
+                  <img loading="lazy" src="./img/goods/photoSix.jpg" alt="Фен" class="item__img" width="420px" height="295px">
+                </picture>
+                <span class="item__discount">-50%</span>
+              </a>
+  
+              <div class="item__price-wrapper">
+                <p class="item__price">2999 ₽</p>
+                <p class="item__price-discount">6030 ₽</p>
+              </div>
+            </li>
+  
+            <li class="goods__item item">
+              <h3 class="item__title">Варежки-мишки</h3>
+              <a href="#" class="item__img-wrapper">
+                <picture>
+                  <source srcset="./img/goods/photoSeven.avif" type="image/avif">
+                  <source srcset="./img/goods/photoSeven.webp" type="image/webp">
+                  <img loading="lazy" src="./img/goods/photoSeven.jpg" alt="Варежки-мишки" class="item__img" width="420px" height="295px">
+                </picture>
+                <span class="item__discount">-50%</span>
+              </a>
+  
+              <div class="item__price-wrapper">
+                <p class="item__price">540 ₽</p>
+                <p class="item__price-discount">890 ₽</p>
+              </div>
+            </li>
+  
+            <li class="goods__item item">
+              <h3 class="item__title">Пара футболок</h3>
+              <a href="#" class="item__img-wrapper">
+                <picture>
+                  <source srcset="./img/goods/photoOne.avif" type="image/avif">
+                  <source srcset="./img/goods/photoOne.webp" type="image/webp">
+                  <img loading="lazy" src="./img/goods/photoOne.jpg" alt="Пара футболок" class="item__img" width="420px" height="295px">
+                </picture>
+                <span class="item__discount">-50%</span>
+              </a>
+  
+              <div class="item__price-wrapper">
+                <p class="item__price">1299 ₽</p>
+                <p class="item__price-discount">2598 ₽</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section> -->
     </main>
   
     <footer class="footer">
