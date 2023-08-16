@@ -16,8 +16,8 @@ const init = async () => {
   const search = window.location.search;
   const data = await getDataArticle(API_URL_POST, search);
 
-  const bread = createBreadCrumbs(data);
-  headerContainer?.append(bread);
+  // const bread = createBreadCrumbs(data);
+  // headerContainer?.append(bread);
 
   const blog = renderBlog(data);
   pageBlog?.append(blog);
@@ -27,10 +27,10 @@ const init = async () => {
   const article = await renderArticle();
   pageArticle?.append(article);
 
-  const card = createCard();
-  console.log('card: ', card);
-  const pageCard = document.querySelector('.page-card');
-  pageCard?.prepend(card);
+  // const card = createCard();
+  // console.log('card: ', card);
+  // const pageCard = document.querySelector('.page-card');
+  // pageCard?.prepend(card);
 };
 
 init();

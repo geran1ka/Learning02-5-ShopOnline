@@ -16,10 +16,8 @@ export const renderArticle = async () => {
     className: 'container article-container',
   });
 
-  const bread = createBreadCrumbs(data);
   const {articleMain, footer} = await createArticle(data);
   const aside = createAside();
-  headerContainer?.append(bread);
   container.append(articleMain, footer, aside);
   article.append(container);
 

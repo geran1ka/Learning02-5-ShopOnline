@@ -2,6 +2,20 @@
   padding-top: 40px;
   padding-bottom: 50px;
 
+  @include laptop {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @include tablet {
+    padding-top: 25px;
+  }
+
+  @include mobile {
+    padding-top: 15px;
+    padding-bottom: 25px;
+  }
+
   &__container {
     display: grid;
     grid-template-columns: 1fr 420px;
@@ -11,10 +25,52 @@
       'img book'
       'description .';
     gap: 69px;
+
+    @include laptop {
+      grid-template-columns: 1fr 300px;
+      grid-template-areas: 
+      'title .'
+      'img book'
+      'description description';
+    }
+  
+    @include tablet {
+      grid-template-areas: 
+      'title title'
+      'img book'
+      'description description';
+    }
+  
+    @include mobile {
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+      'title'
+      'img'
+      'book'
+      'description';
+    }
   }
   
   &__title {
     grid-area: title;
+
+    color: $black;
+    font-family: Lato;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 130%;
+
+    @include laptop {
+      font-size: 40px;
+    }
+
+    @include tablet {
+      font-size: 28px;      
+    }
+
+    @include mobile {
+      font-size: 18px;      
+    }
   }
   
   &__content {
@@ -27,9 +83,30 @@
 
     p {
       @extend %promoCardDiscount;
-
       top: 20px;
       right: 50px;
+
+      @include laptop {
+        top: 10px;
+        right: 30px;
+        width: 66px;
+        height: 66px;
+        font-size: 20px;
+      }
+  
+      @include tablet {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;     
+      }
+  
+      @include mobile {
+        top: 5px;
+        right: 5px;
+        width: 32px;
+        height: 32px;
+        font-size: 12px;  
+      }
     }
 
   }
