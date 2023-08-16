@@ -18,8 +18,15 @@
   }
 
   &__container {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
     margin: 0 auto;
+  }
+
+  &__main {
+    position: relative;
+
     display: grid;
     grid-template-columns: 190px 151px minmax(min-content, 757px) 354px;
     grid-template-rows: min-content;

@@ -80,6 +80,14 @@
       row-gap: 30px;
     }
 	}
+
+  &__list-card li:nth-last-child(-n+2) {
+    display: none;
+
+    @include laptop {
+      display: flex;
+    }
+  }
 }
 
 .item {

@@ -1,5 +1,5 @@
 import {createElem} from './createElem.js';
-import {API_URL_POST} from './const.js';
+import {API_URL_POST, headerContainer} from './const.js';
 import {createBreadCrumbs} from './createBreadCrumbs.js';
 import {createAside} from './createAside.js';
 import {createArticle} from './createAticle.js';
@@ -16,11 +16,11 @@ export const renderArticle = async () => {
     className: 'container article-container',
   });
 
-  const header = createBreadCrumbs(data);
+  const bread = createBreadCrumbs(data);
   const {articleMain, footer} = await createArticle(data);
   const aside = createAside();
-
-  container.append(header, articleMain, footer, aside);
+  headerContainer?.append(bread);
+  container.append(articleMain, footer, aside);
   article.append(container);
 
   return article;

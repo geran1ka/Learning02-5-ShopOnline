@@ -2,6 +2,7 @@ import {createElem} from './createElem.js';
 import {createBreadCrumbs} from './createBreadCrumbs.js';
 import {paginationController} from './paginationControl.js';
 import {renderPagination} from './renderPagination.js';
+import { headerContainer } from './const.js';
 
 export const renderBlog = (data) => {
   const section = createElem('section', {
@@ -18,7 +19,8 @@ export const renderBlog = (data) => {
 
   section.append(container);
 
-  const header = createBreadCrumbs(data);
+  // const bread = createBreadCrumbs(data);
+  // headerContainer.append(bread);
 
   const blogContentWrapper = createElem('div', {
     className: 'blog__container',
@@ -106,7 +108,7 @@ export const renderBlog = (data) => {
   });
   blogList.append(...itemList);
   blogContentWrapper.append(blogList);
-  container.append(header, blogContentWrapper, pagination);
+  container.append(blogContentWrapper, pagination);
   // const urlPageBlog = window.location.href;
 
   return section;
