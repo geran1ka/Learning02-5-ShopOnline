@@ -17,9 +17,6 @@ export const renderBlog = (data) => {
 
   section.append(container);
 
-  // const bread = createBreadCrumbs(data);
-  // headerContainer.append(bread);
-
   const blogContentWrapper = createElem('div', {
     className: 'blog__container',
   });

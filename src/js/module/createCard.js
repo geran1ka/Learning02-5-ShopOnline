@@ -23,11 +23,17 @@ export const createCard = () => {
       <picture>
         <source srcset="./img/card/cardNout.avif" type="image/avif">
         <source src="./img/card/cardNout.wepb" type="image/webp">
-        <img class="card__img" src="./img/card/cardNout.jpg" alt="'15.6' Игровой ноутбук ASUS G513IE-HN004T" width="757px" height="427px">
+        <img class="card__img" src="./img/card/cardNout.jpg" alt="${data.title}" width="757px" height="427px">
       </picture>
-      <p>${data.discount}</p>
     `,
   });
+
+  if (data.discount) {
+    const pDiscount = createElem('p', {
+      textContent: `${data.discount}%`,
+    });
+    cardContent.append(pDiscount);
+  }
 
   const book = createElem('div', {
     className: 'card__book',
@@ -44,13 +50,13 @@ export const createCard = () => {
   const cardPriceNew = createElem('span', {
     className: 'card__price-new',
     textContent: data.discount ?
-      (data.price - (data.price * data.discount / 100)) :
-      data.price,
+      `${(data.price - (data.price * data.discount / 100))} ₽` :
+      `${data.price} ₽`,
   });
 
   const cardPriceOld = createElem('span', {
     className: 'card__price-old',
-    textContent: data.discount ? data.price : '',
+    textContent: data.discount ? `${data.price} ₽` : '',
   });
 
   const cardPriceCredit = createElem('p', {
@@ -102,13 +108,12 @@ export const createCard = () => {
     textContent: 'ShopOnline',
   });
   const cardDiscountInfo = createElem('div', {
-    className: 'card__discount-info',
+    className: 'card__discount-btn',
     innerHTML: `
-    <svg class="card__discount-btn" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M19 13.586V10C19 6.783 16.815 4.073 13.855 3.258C13.562 2.52 12.846 2 12 2C11.154 2 10.438 2.52 10.145 3.258C7.185 4.074 5 6.783 5 10V13.586L3.293 15.293C3.19996 15.3857 3.12617 15.4959 3.07589 15.6172C3.0256 15.7386 2.99981 15.8687 3 16V18C3 18.2652 3.10536 18.5196 3.29289 18.7071C3.48043 18.8946 3.73478 19 4 19H20C20.2652 19 20.5196 18.8946 20.7071 18.7071C20.8946 18.5196 21 18.2652 21 18V16C21.0002 15.8687 20.9744 15.7386 20.9241 15.6172C20.8738 15.4959 20.8 15.3857 20.707 15.293L19 13.586ZM19 17H5V16.414L6.707 14.707C6.80004 14.6143 6.87383 14.5041 6.92412 14.3828C6.9744 14.2614 7.00019 14.1313 7 14V10C7 7.243 9.243 5 12 5C14.757 5 17 7.243 17 10V14C17 14.266 17.105 14.52 17.293 14.707L19 16.414V17ZM12 22C12.6193 22.0008 13.2235 21.8086 13.7285 21.4502C14.2335 21.0917 14.6143 20.5849 14.818 20H9.182C9.38566 20.5849 9.76648 21.0917 10.2715 21.4502C10.7765 21.8086 11.3807 22.0008 12 22Z" fill="#3670C7"/>
+    <svg class="card__discount-svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19 13.586V10C19 6.783 16.815 4.073 13.855 3.258C13.562 2.52 12.846 2 12 2C11.154 2 10.438 2.52 10.145 3.258C7.185 4.074 5 6.783 5 10V13.586L3.293 15.293C3.19996 15.3857 3.12617 15.4959 3.07589 15.6172C3.0256 15.7386 2.99981 15.8687 3 16V18C3 18.2652 3.10536 18.5196 3.29289 18.7071C3.48043 18.8946 3.73478 19 4 19H20C20.2652 19 20.5196 18.8946 20.7071 18.7071C20.8946 18.5196 21 18.2652 21 18V16C21.0002 15.8687 20.9744 15.7386 20.9241 15.6172C20.8738 15.4959 20.8 15.3857 20.707 15.293L19 13.586ZM19 17H5V16.414L6.707 14.707C6.80004 14.6143 6.87383 14.5041 6.92412 14.3828C6.9744 14.2614 7.00019 14.1313 7 14V10C7 7.243 9.243 5 12 5C14.757 5 17 7.243 17 10V14C17 14.266 17.105 14.52 17.293 14.707L19 16.414V17ZM12 22C12.6193 22.0008 13.2235 21.8086 13.7285 21.4502C14.2335 21.0917 14.6143 20.5849 14.818 20H9.182C9.38566 20.5849 9.76648 21.0917 10.2715 21.4502C10.7765 21.8086 11.3807 22.0008 12 22Z"/>
     </svg>
-
-    <p class="card__discount-title">Узнать о снижении цены</p>
+    <span>Узнать о снижении цены</span>
     `,
   });
 
@@ -123,22 +128,11 @@ export const createCard = () => {
 
   const cardDescriptionText = createElem('p', {
     className: 'card__description-text',
-    textContent: `
-      ROG Strix G15/17 – это игровая платформа для массового пользователя,
-      работающая на базе операционной системы Windows 10 Pro. Благодаря 
-      мощной конфигурации, которая может включать в себя процессор AMD 
-      Ryzen 9 5900HX и видеокарту GeForce RTX 3070, этот ноутбук подходит 
-      для широкого спектра задач. Его дисплей доступен в двух вариантах: 
-      с киберспортивного уровня частотой обновления в 300 Гц или с высоким 
-      разрешением WQHD. Оба варианта обладают низким временем отклика (3 мс) 
-      и поддерживают адаптивную синхронизацию Adaptive-Sync. Оптимизированная 
-      система охлаждения гарантирует стабильную работу устройства под тяжелыми 
-      нагрузками, поэтому ROG Strix G15/17 позволит вам проявить все свое 
-      мастерство в любой игровой ситуации!
-      `,
+    textContent: data.description,
   });
 
   cardDescription.append(cardDescriptionTitle, cardDescriptionText);
+  cardWrapperDeliverySalesman.append(cardDelivery, cardSalesman);
   cardSalesman.append(salesmanName);
   cardDelivery.append(deliveryDate);
   cardBtnWrapper.append(btnAddCart, btnAddFavorite);
