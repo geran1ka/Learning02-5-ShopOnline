@@ -25,6 +25,7 @@
       'title title'
       'img book'
       'description .';
+    column-gap: 20px;
 
     @include laptop {
       grid-template-columns: 1fr 300px;
@@ -95,9 +96,6 @@
       left: 0;
       right: 0;
     }
-  }
-  
-  &__content {
   }
   
   &__img-wrapper {
