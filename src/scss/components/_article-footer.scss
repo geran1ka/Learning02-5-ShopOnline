@@ -43,7 +43,8 @@
       width: 24px;
       height: 24px;
       background-size: 24px 24px;
-      background: url('../img/blog/backspace.svg') center no-repeat;
+      // background: url("../img/sprite.svg#backspace") center no-repeat;
+      background: url("../img/svg/backspace.svg") center no-repeat;
       transition: background-image .3s ease-in-out;
 
       @include mobile {
@@ -58,7 +59,8 @@
     }
   
     &:hover::before {
-      background-image: url('../img/blog/backspaceblue.svg');
+      // background-image: url("../img/sprite.svg#backspaceblue");
+      background: url("../img/svg/backspaceblue.svg") center no-repeat;
     }
   
     &:focus {

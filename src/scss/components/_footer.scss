@@ -106,7 +106,9 @@
     width: 17px;
     height: 8px;
     background: {
-      image: url('../img/arrowDown.svg');
+      // image: url('../img/sprite.svg#arrowDown');
+      image: url('../img/svg/arrowDown.svg');
+
       repeat: no-repeat;
       position: center;
     }
@@ -115,7 +117,9 @@
 
     &_active {
       transform: rotate(180deg);
-      background-image: url('../img/arrowDown.svg');
+      // background-image: url('../img/sprite.svg#arrowDown');
+      background-image: url('../img/svg/arrowDown.svg');
+
     }
   }
 

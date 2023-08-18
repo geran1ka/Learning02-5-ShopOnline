@@ -5,7 +5,8 @@
     width: 17px;
     height: 8px;
     background: {
-      image: url('../img/arrowTop.svg');
+      // image: url('../img/sprite.svg#arrowTop');
+      image: url('../img/svg/arrowTop.svg');
       repeat: no-repeat;
       position: center;
     }
@@ -13,7 +14,8 @@
 
     &_active {
       transform: rotate(180deg);
-      background-image: url('../img/arrowTop.svg');
+      // background-image: url('../img/sprite.svg#arrowTop');
+      background-image: url('../img/svg/arrowTop.svg');
     }
   }
 
